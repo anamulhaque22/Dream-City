@@ -470,6 +470,7 @@ void river()
     glEnd();
 }
 
+
 void boat()
 {
     glBegin(GL_POLYGON);
@@ -762,7 +763,26 @@ void display2()
     glutSwapBuffers();
 
 }
+void way()
+{
+    glBegin(GL_QUADS);
+    glColor3ub(153, 153, 102);
+    glVertex2f(-0.35f,-0.2f);
+    glVertex2f(-0.22f,-0.2f);
+    glVertex2f(-0.28f,-0.5f);
+    glVertex2f(-0.43f,-0.5f);
+    glEnd();
 
+    glBegin(GL_QUADS);
+    glColor3ub(153, 153, 102);
+    glVertex2f(-0.43f,-0.5f);
+    glVertex2f(-0.75f,-1.0f);
+    glVertex2f(-0.56f,-1.0f);
+    glVertex2f(-0.28f,-0.5f);
+    glEnd();
+
+
+}
 struct Point
 {
     float x, y;
@@ -781,7 +801,7 @@ void display1(void)
     cloud1();
     cloud2();
     cloud3();
-
+    way();
     river();
 
     boat2();
@@ -834,7 +854,7 @@ void display() {
     glPopMatrix();
 
     boat2();
-
+    way();
 
 
 	glFlush();
@@ -850,6 +870,7 @@ void reshape(int w, int h)
     glMatrixMode(GL_MODELVIEW);
 
 }
+
 
 void Display(void)
 {
