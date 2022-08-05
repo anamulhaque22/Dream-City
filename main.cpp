@@ -1,10 +1,10 @@
 #include <cstdio>
-//#include <windows.h>
+#include <windows.h>
 #include <math.h>
 #define PI 3.14259265358979323846
 #include <GL/gl.h>
 #include <GL/glut.h>
-//#include<MMSystem.h>
+#include<MMSystem.h>
 
 void greenBackground()
 {
