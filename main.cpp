@@ -27,6 +27,7 @@ void birdd(int value)
 	glutPostRedisplay();
 	glutTimerFunc(100, birdd, 0);
 }
+
 GLfloat position4 = 0.0f;
 GLfloat speed4 = -0.01f;
 void sunn(int value)
@@ -40,6 +41,7 @@ void sunn(int value)
 
 	glutTimerFunc(100, sunn, 0);
 }
+
 GLfloat position3 = 0.0f;
 GLfloat speed3 = -0.5f;
 void rain(int value)
@@ -762,6 +764,93 @@ void StartingText()
 			glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_10, text[i]);
 	}
 }
+// Highaway
+void runway() // F15
+{
+	glColor3ub(96, 96, 96);
+	glBegin(GL_POLYGON);
+	glVertex2f(100.0f, 40.0f);
+	glVertex2f(1300.0f, 40.0f);
+	glVertex2f(1200.0f, 180.0f);
+	glVertex2f(200.0f, 180.0f);
+	glEnd();
+
+	//----------Runway stripe-----
+	float endR = 110, begR = 45;
+	for (int i = 0; i < 8; i++)
+	{
+		glColor3ub(255, 255, 255);
+		glBegin(GL_POLYGON);
+		glVertex2f(endR, begR);
+		glVertex2f(endR + 50, begR);
+		glVertex2f(endR + 57, begR + 10);
+		glVertex2f(endR + 7, begR + 10);
+		glEnd();
+		begR = begR + 15;
+		endR = endR + 12;
+		if (i == 3)
+		{
+			begR += 15;
+			endR += 5;
+		}
+	}
+	endR = 1240, begR = 45;
+	for (int i = 0; i < 8; i++)
+	{
+		glColor3ub(255, 255, 255);
+		glBegin(GL_POLYGON);
+		glVertex2f(endR, begR);
+		glVertex2f(endR + 50, begR);
+		glVertex2f(endR + 43, begR + 10);
+		glVertex2f(endR - 7, begR + 10);
+		glEnd();
+		begR = begR + 15;
+		endR = endR - 12;
+		if (i == 3)
+		{
+			begR += 15;
+			endR -= 5;
+		}
+	}
+
+	//--------Runway Middle Stripe--------
+	endR = 230, begR = 105;
+	for (int i = 0; i < 10; i++)
+	{
+		glColor3ub(255, 255, 255);
+		glBegin(GL_POLYGON);
+		glVertex2f(endR, begR);
+		glVertex2f(endR + 50, begR);
+		glVertex2f(endR + 45, begR + 10);
+		glVertex2f(endR + 6, begR + 10);
+		glEnd();
+		endR = endR + 100;
+	}
+	//-------Runway double stripe----
+	glColor3ub(255, 255, 255);
+	glBegin(GL_POLYGON);
+	glVertex2f(168.0f, 45.0f);
+	glVertex2f(1230.0f, 45.0f);
+	glVertex2f(1222.0f, 55.0f);
+	glVertex2f(178.0f, 55.0f);
+	glEnd();
+
+	glColor3ub(255, 255, 255);
+	glBegin(GL_POLYGON);
+	glVertex2f(260.0f, 165.0f);
+	glVertex2f(880.0f, 165.0f);
+	glVertex2f(872.0f, 175.0f);
+	glVertex2f(268.0f, 175.0f);
+	glEnd();
+
+	glColor3ub(255, 255, 255);
+	glBegin(GL_POLYGON);
+	glVertex2f(1060.0f, 165.0f);
+	glVertex2f(1145.0f, 165.0f);
+	glVertex2f(1138.0f, 175.0f);
+	glVertex2f(1068.0f, 175.0f);
+	glEnd();
+}
 
 void display2()
 {
@@ -797,7 +886,6 @@ void display1(void)
 	river();
 
 	boat2();
-
 	glOrtho(-50, 50, -50, 50, -1, 1);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
@@ -827,25 +915,35 @@ void display()
 	glLineWidth(2);
 	sky();
 	sun();
+
 	glPushMatrix();
 	glTranslatef(position2, 0.0f, 0.0f);
 
 	cloud1();
 	cloud2();
+
 	glPopMatrix();
 	glPushMatrix();
 	glTranslatef(position22, 0.0f, 0.0f);
 
 	glPopMatrix();
-
 	river();
+
 	glPushMatrix();
 	glTranslatef(position1, 0.0f, 0.0f);
 	boat();
 	glPopMatrix();
 
-	boat2();
+	glClear(GL_COLOR_BUFFER_BIT);
+	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glColor3d(1, 0, 0);
+	glLineWidth(7.5);
+	glLoadIdentity(); // Reset the drawing perspective
+	glMatrixMode(GL_MODELVIEW);
+	runway();
 
+	boat2();
+	runway();
 	glFlush();
 	glutSwapBuffers();
 }
@@ -893,7 +991,7 @@ void handleKeypress(unsigned char key, int x, int y)
 		glutCreateWindow("village scenario");
 		glutKeyboardFunc(handleKeypress);
 		glutDisplayFunc(display);
-		//PlaySound(TEXT("bird-2.wav"), NULL, SND_ASYNC);
+		// PlaySound(TEXT("bird-2.wav"), NULL, SND_ASYNC);
 		break;
 		break;
 	case 'r':
@@ -903,7 +1001,7 @@ void handleKeypress(unsigned char key, int x, int y)
 		glutCreateWindow("village scenario");
 		glutKeyboardFunc(handleKeypress);
 		glutDisplayFunc(display1);
-		//PlaySound(TEXT("rain-07.wav"), NULL, SND_ASYNC);
+		// PlaySound(TEXT("rain-07.wav"), NULL, SND_ASYNC);
 		break;
 	case 'n':
 		glutDestroyWindow(1);
@@ -912,7 +1010,7 @@ void handleKeypress(unsigned char key, int x, int y)
 		glutCreateWindow("village scenario");
 		glutKeyboardFunc(handleKeypress);
 		glutDisplayFunc(display2);
-		//PlaySound(TEXT("cricket-2.wav"), NULL, SND_ASYNC);
+		// PlaySound(TEXT("cricket-2.wav"), NULL, SND_ASYNC);
 		glutPostRedisplay();
 		break;
 	case 'D':
@@ -922,7 +1020,7 @@ void handleKeypress(unsigned char key, int x, int y)
 		glutCreateWindow("village scenario");
 		glutKeyboardFunc(handleKeypress);
 		glutDisplayFunc(display);
-		//PlaySound(TEXT("bird-2.wav"), NULL, SND_ASYNC);
+		// PlaySound(TEXT("bird-2.wav"), NULL, SND_ASYNC);
 		break;
 		break;
 	case 'R':
@@ -932,7 +1030,7 @@ void handleKeypress(unsigned char key, int x, int y)
 		glutCreateWindow("village scenario");
 		glutKeyboardFunc(handleKeypress);
 		glutDisplayFunc(display1);
-		//PlaySound(TEXT("rain-07.wav"), NULL, SND_ASYNC);
+		// PlaySound(TEXT("rain-07.wav"), NULL, SND_ASYNC);
 		break;
 	case 'N':
 		glutDestroyWindow(1);
@@ -941,7 +1039,7 @@ void handleKeypress(unsigned char key, int x, int y)
 		glutCreateWindow("village scenario");
 		glutKeyboardFunc(handleKeypress);
 		glutDisplayFunc(display2);
-		//PlaySound(TEXT("cricket-2.wav"), NULL, SND_ASYNC);
+		// PlaySound(TEXT("cricket-2.wav"), NULL, SND_ASYNC);
 		glutPostRedisplay();
 	}
 }
@@ -971,7 +1069,7 @@ int main(int argc, char **argv)
 	glutTimerFunc(100, boat, 0);
 	glutTimerFunc(100, rain, 0);
 	glutTimerFunc(100, birdd, 0);
-	glutKeyboardFunc(handleKeypress);
+	//glutKeyboardFunc(handleKeypress);
 	init();
 	glutMainLoop();
 	return 0;
