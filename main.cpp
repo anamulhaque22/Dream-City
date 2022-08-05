@@ -1,10 +1,43 @@
 #include <cstdio>
-//#include <windows.h>
+#include <windows.h>
 #include <math.h>
 #define PI 3.14259265358979323846
 #include <GL/gl.h>
 #include <GL/glut.h>
-//#include<MMSystem.h>
+#include<MMSystem.h>
+
+
+void mountainArea(){
+    glBegin(GL_POLYGON); // sky
+    glColor3ub(152, 219, 248);
+    glVertex2f(-1.00f,0.40f);
+    glVertex2f(1.00f,0.40f);
+    glVertex2f(1.00f,1.00f);
+    glVertex2f(-1.00f,1.00f);
+
+    glEnd();
+    glBegin(GL_POLYGON); // behind mountain left
+    glColor3ub(11, 131, 129);
+    glVertex2f(-0.40f,0.55f);
+    glVertex2f(-0.30f,0.60f);
+    glVertex2f(-0.18f,0.55f);
+    glVertex2f(-0.07f,0.57f);
+    glVertex2f(0.03f,0.53f);
+    glVertex2f(-0.12f,0.37f);
+    glEnd();
+
+    glBegin(GL_POLYGON); // behind mountain right
+    glColor3ub(11, 131, 129);
+    glVertex2f(0.50f,0.53f);
+    glVertex2f(0.55f,0.58f);
+    glVertex2f(0.68f,0.56f);
+    glVertex2f(0.80f,0.60f);
+    glVertex2f(0.95f,0.56f);
+    glVertex2f(1.00f,0.56f);
+    glVertex2f(1.00f,0.35f);
+    glVertex2f(0.85f,0.35f);
+    glEnd();
+}
 
 void greenBackground()
 {
@@ -97,7 +130,9 @@ void display(void)
 	// clear color and depth buffers
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	greenBackground();
+	mountainArea();
 	roadBlock();
+
 	glFlush();
 }
 

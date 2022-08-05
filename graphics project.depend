@@ -227,3 +227,11 @@
 	<stddef.h>
 	<GL/gl.h>
 
+1659721450 source:c:\project\sea beatch\main.cpp
+	<cstdio>
+	<windows.h>
+	<math.h>
+	<GL/gl.h>
+	<GL/glut.h>
+	<MMSystem.h>
+
