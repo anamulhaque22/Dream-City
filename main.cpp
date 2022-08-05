@@ -19,7 +19,7 @@ void greenBackground()
 	glEnd();
 }
 
-// road block
+//ground road block
 void roadBlock()
 {
 	glBegin(GL_POLYGON); // road back 1
@@ -88,6 +88,10 @@ void roadBlock()
 	glEnd();
 }
 
+
+
+
+//Dasplay Function
 void display(void)
 {
 	// clear color and depth buffers
