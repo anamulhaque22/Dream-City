@@ -47,3 +47,94 @@ void university()
     glVertex2f(-0.61f, 0.05);
     glVertex2f(-0.69f, 0.05f);
     glEnd();
+
+    glBegin(GL_POLYGON);//next to left middle section
+    glColor3ub(255,221,173);
+
+    glVertex2f(-0.61f, 0.05);
+    glVertex2f(-0.69f, 0.05f);
+    glVertex2f(-0.69f, 0.17);
+    glVertex2f(-0.61f, 0.17f);
+    glEnd();
+
+    glBegin(GL_POLYGON); ////next to left top section
+    glColor3ub(85,85,85);
+    glVertex2f(-0.69f, 0.17);
+    glVertex2f(-0.61f, 0.17f);
+    glVertex2f(-0.61f, 0.30);
+    glVertex2f(-0.69f, 0.30f);
+
+glEnd();
+
+    glBegin(GL_POLYGON); //middle section whole
+    glColor3ub(255,166,0);
+
+    glVertex2f(-0.61f, -0.15f);
+    glVertex2f(-0.51f, -0.15f);
+    glVertex2f(-0.51f, 0.33);
+    glVertex2f(-0.61f, 0.33f);
+    glEnd();
+
+    glBegin(GL_POLYGON); //middle section triangle
+    glColor3ub(131,133,135);
+
+    glVertex2f(-0.61f, 0.33f);
+    glVertex2f(-0.61f, 0.30f);
+    glVertex2f(-0.62f, 0.30);
+    glEnd();
+
+
+    glLineWidth(6);
+    glBegin(GL_LINES); //next to left side border
+    glColor3ub(211,211,211);
+    glVertex2f(-0.69f, 0.05f);
+    glVertex2f(-0.61f, 0.05f);
+
+    glVertex2f(-0.69f, 0.17f);
+    glVertex2f(-0.61f, 0.17f);
+
+    glEnd();
+
+    glBegin(GL_POLYGON); ;//right section whole
+    glColor3ub(85,85,85);
+
+    glVertex2f(-0.51f, -0.15f);
+    glVertex2f(-0.45f, -0.15f);
+    glVertex2f(-0.45f, 0.36);
+    glVertex2f(-0.51f, 0.36f);
+    glEnd();
+
+
+    glBegin(GL_POLYGON); ;//right section triangle
+    glColor3ub(131,133,135);
+    glVertex2f(-0.51f, 0.36);
+    glVertex2f(-0.51f, 0.33f);
+    glVertex2f(-0.52f, 0.33f);
+
+    glEnd();
+
+    glBegin(GL_POLYGON);////next to left middle section window
+    glColor3ub(208,216,209);
+    glVertex2f(-0.63f, 0.07);
+    glVertex2f(-0.67f, 0.07f);
+     glVertex2f(-0.67f, 0.15);
+    glVertex2f(-0.63f, 0.15f);
+    glEnd();
+
+    glBegin(GL_POLYGON);////next to left middle section window a
+    glColor3ub(241,255,241);
+
+    glVertex2f(-0.635f, 0.075);
+    glVertex2f(-0.665f, 0.075f);
+    glVertex2f(-0.665f, 0.145);
+    glVertex2f(-0.635f, 0.145f);
+    glEnd();
+
+glLineWidth(1);
+    glBegin(GL_LINES);////next to left middle section window b
+    glColor3ub(168,168,168);
+
+
+
+
+
