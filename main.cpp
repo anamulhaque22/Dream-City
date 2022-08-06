@@ -134,6 +134,10 @@ glLineWidth(1);
     glBegin(GL_LINES);////next to left middle section window b
     glColor3ub(168,168,168);
 
+glVertex2f(-0.649f, 0.075);
+    glVertex2f(-0.649f, 0.145f);
+    glEnd();
+
 
 
 
