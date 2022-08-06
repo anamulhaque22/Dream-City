@@ -16,14 +16,16 @@ void mountainArea(){
     glVertex2f(-1.00f,1.00f);
 
     glEnd();
-    glBegin(GL_POLYGON); // behind mountain left
-    glColor3ub(11, 131, 129);
-    glVertex2f(-0.40f,0.55f);
-    glVertex2f(-0.30f,0.60f);
-    glVertex2f(-0.18f,0.55f);
-    glVertex2f(-0.07f,0.57f);
-    glVertex2f(0.03f,0.53f);
-    glVertex2f(-0.12f,0.37f);
+    glBegin(GL_POLYGON); // middle mountain
+    glColor3ub(39, 178, 77);
+    glVertex2f(-0.15f,0.35f);
+    glVertex2f(0.05f,0.58f);
+    glVertex2f(0.12f,0.55f);
+    glVertex2f(0.29f,0.61f);
+    glVertex2f(1.00f,0.35f);
+    glVertex2f(0.20f,0.30f);
+
+
     glEnd();
 
     glBegin(GL_POLYGON); // behind mountain right
@@ -156,15 +158,51 @@ glEnd();
 
 
 }
+ void river()
+ {
+
+     glBegin(GL_POLYGON); // river front
+
+    glColor3ub(56, 180, 232);
+    glVertex2f(1.00f,-0.30);
+    glVertex2f(0.90f,-0.29f);
+    glVertex2f(0.80f,-0.28f);
+    glVertex2f(0.70f,-0.38f);
+    glVertex2f(0.59f,-0.50f);
+    glVertex2f(0.51f,-0.53f);
+    glVertex2f(0.46f,-0.67f);
+    glVertex2f(0.40f,-0.78f);
+    glVertex2f(0.35f,-0.88f);
+    glVertex2f(0.26f,-0.84f);
+    glVertex2f(0.10f,-1.00f);
+    glVertex2f(1.00f,-1.00f);
+
+
+    glEnd();
+ }
 
 void display(void)
 {
+     /* clear all pixels */
+    glClear(GL_COLOR_BUFFER_BIT);
+    /* draw white polygon (rectangle) with corners at
+    * (0.25, 0.25, 0.0) and (0.75, 0.75, 0.0)
+    */
+
+    glBegin(GL_POLYGON); // green background main
+    glColor3ub(166, 210, 131);
+    glVertex2f(-1.00f,-1.00f);
+    glVertex2f(1.00f,-1.00f);
+    glVertex2f(1.00f,0.40f);
+    glVertex2f(-1.00f,0.40f);
+    glEnd();
 	// clear color and depth buffers
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	greenBackground();
 	mountainArea();
 	roadBlock();
     tunnel();
+    river();
 	glFlush();
 }
 
