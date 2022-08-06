@@ -1444,13 +1444,13 @@ void display(void)
     glPushMatrix();
     glTranslatef(0.00f, 0.05f, 0.00f);
     glScalef(0.90f, 0.90f, 0.00f);
-    // prayerplace();
+    prayerplace();
     glPopMatrix();
 
     glPushMatrix();
     glTranslatef(0.45f, 0.00f, 0.00f);
     glScalef(0.65f, 0.80f, 0.00f);
-    // school();
+    school();
     glPopMatrix();
 
     glPushMatrix();
