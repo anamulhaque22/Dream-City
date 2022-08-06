@@ -180,6 +180,20 @@ glEnd();
 
     glEnd();
 
+
+
+    glBegin(GL_POLYGON); // river back 3
+    glColor3ub(56, 180, 232);
+    glVertex2f(0.27f,0.25f);
+    glVertex2f(0.15f,0.05f);
+    glVertex2f(0.11f,0.05f);
+    glVertex2f(0.24f,0.24f);
+
+
+
+    glEnd();
+
+
  }
 
  void vcargreen()
