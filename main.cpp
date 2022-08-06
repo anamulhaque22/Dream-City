@@ -1369,7 +1369,7 @@ glBegin(GL_POLYGON);   //// Window bottom right
 
     glEnd();
 
-    glBegin(GL_POLYGON); //// Window top right
+    glBegin(GL_POLYGON); /////// Window top right
     glColor3ub(241,220,203);
     glVertex2f(-0.32f,0.15f);
     glVertex2f(-0.29f,0.15f);
@@ -1379,7 +1379,7 @@ glBegin(GL_POLYGON);   //// Window bottom right
     glEnd();
 
 
-    glBegin(GL_POLYGON); //// Window top right a
+    glBegin(GL_POLYGON); /////// Window top right a
     glColor3ub(112,164,177);
     glVertex2f(-0.318f, 0.152f);
     glVertex2f(-0.292f, 0.152f);
@@ -1397,7 +1397,6 @@ glBegin(GL_POLYGON);   //// Window bottom right
     glEnd();
 
 }
-
 void display(void)
 {
     glPushMatrix();
@@ -1423,8 +1422,7 @@ void display(void)
     glScalef(0.90f, 0.90f, 0.00f);
     university();
     glPopMatrix();
-
-
+    
     glPushMatrix();
     glTranslatef(0.10f, -0.10f, 0.00f);
     glScalef(0.90f, 0.90f, 0.00f);
@@ -1441,7 +1439,6 @@ void init (void)
     glLoadIdentity();
     glOrtho(-1, 1, -1, 1, -10.0, 10.0);
 }
-
 int main(int argc, char** argv)
 {
     glutInit(&argc, argv);
