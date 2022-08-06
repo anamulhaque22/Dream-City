@@ -15,9 +15,9 @@ void university()
     glVertex2f(-0.74f,-0.20f);
     glVertex2f(-0.36f,-0.20f);
     glVertex2f(-0.44f,-0.08f);
+   
 
-    glEnd();;;
-
+  
     glBegin(GL_POLYGON);       ////left side
     glColor3ub(300,200,100);
     glVertex2f(-0.75f, -0.10f);
@@ -25,7 +25,7 @@ void university()
     glVertex2f(-0.69f, 0.30);
     glVertex2f(-0.75f, 0.20f);
     glEnd();
-
+    
     glLineWidth(4);
     glBegin(GL_LINES);        ////left side border
     glColor3ub(300,100, 200);
@@ -34,6 +34,8 @@ void university()
     glVertex2f(-0.69f, 0.17);
     glVertex2f(-0.75f, 0.11f);
     glEnd();
+
+    
 
     glBegin(GL_POLYGON); ;   ////next to left below section
     glColor3ub(120,225,90);
