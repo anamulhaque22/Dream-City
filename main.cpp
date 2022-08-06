@@ -7,19 +7,16 @@
 #include<MMSystem.h>
 
 void university()
-
 {
     glBegin(GL_POLYGON);
-    glColor3ub(200, 100, 600);
+    glColor3ub(200, 200, 400);
     glVertex2f(-0.82f,-0.08f);
     glVertex2f(-0.74f,-0.20f);
     glVertex2f(-0.36f,-0.20f);
     glVertex2f(-0.44f,-0.08f);
-   
-
-  
-    glBegin(GL_POLYGON);       ////left side
-    glColor3ub(300,200,100);
+    
+    glBegin(GL_POLYGON); ///left side
+    glColor3ub(100,200,400);
     glVertex2f(-0.75f, -0.10f);
     glVertex2f(-0.69f, -0.15f);
     glVertex2f(-0.69f, 0.30);
@@ -27,18 +24,16 @@ void university()
     glEnd();
     
     glLineWidth(4);
-    glBegin(GL_LINES);        ////left side border
-    glColor3ub(300,100, 200);
+    glBegin(GL_LINES); ///left side border
+    glColor3ub(200,200, 600);
     glVertex2f(-0.69f, 0.05f);
     glVertex2f(-0.75f, 0.00f);
     glVertex2f(-0.69f, 0.17);
     glVertex2f(-0.75f, 0.11f);
     glEnd();
-
     
-
  glBegin(GL_POLYGON); ;   ////next to left below section
-    glColor3ub(120,225,90);
+    glColor3ub(121,225,110);
     glVertex2f(-0.69f, -0.15f);
     glVertex2f(-0.61f, -0.15f);
     glVertex2f(-0.61f, 0.05);
@@ -46,7 +41,7 @@ void university()
     glEnd();
 
   glBegin(GL_POLYGON);     ////next to left middle section
-    glColor3ub(225,201,473);
+    glColor3ub(215,221,173);
 
     glVertex2f(-0.61f, 0.05);
     glVertex2f(-0.69f, 0.05f);
@@ -55,7 +50,7 @@ void university()
     glEnd();
 
    glBegin(GL_POLYGON);   ////next to left top section
-    glColor3ub(85,85,85);
+    glColor3ub(81,82,82);
     glVertex2f(-0.69f, 0.17);
     glVertex2f(-0.61f, 0.17f);
     glVertex2f(-0.61f, 0.30);
@@ -64,7 +59,7 @@ void university()
 glEnd();
 
     glBegin(GL_POLYGON);   ////middle section whole
-    glColor3ub(105,226,0);
+    glColor3ub(115,126,0);
     glVertex2f(-0.61f, -0.15f);
     glVertex2f(-0.51f, -0.15f);
     glVertex2f(-0.51f, 0.33);
@@ -72,7 +67,7 @@ glEnd();
     glEnd();
 
     glBegin(GL_POLYGON);   ////middle section triangle
-    glColor3ub(131,133,135);
+    glColor3ub(134,123,135);
 
     glVertex2f(-0.61f, 0.33f);
     glVertex2f(-0.61f, 0.30f);
@@ -81,7 +76,7 @@ glEnd();
 
     glLineWidth(6);
     glBegin(GL_LINES);       ////next to left side border
-    glColor3ub(331,111,511);
+    glColor3ub(111,211,311);
     glVertex2f(-0.69f, 0.05f);
     glVertex2f(-0.61f, 0.05f);
     glVertex2f(-0.69f, 0.17f);
@@ -90,16 +85,15 @@ glEnd();
     glEnd();
 
     glBegin(GL_POLYGON); ;  ////right section whole
-    glColor3ub(185,185,195);
+    glColor3ub(175,175,185);
     glVertex2f(-0.51f, -0.15f);
     glVertex2f(-0.45f, -0.15f);
     glVertex2f(-0.45f, 0.36);
     glVertex2f(-0.51f, 0.36f);
     glEnd();
 
-
     glBegin(GL_POLYGON); ;  ////right section triangle
-    glColor3ub(131,133,135);
+    glColor3ub(121,123,125);
     glVertex2f(-0.51f, 0.36);
     glVertex2f(-0.51f, 0.33f);
     glVertex2f(-0.52f, 0.33f);
@@ -107,7 +101,7 @@ glEnd();
     glEnd();
 
     glBegin(GL_POLYGON);    ////next to left middle section window
-    glColor3ub(208,216,209);
+    glColor3ub(218,256,219);
     glVertex2f(-0.63f, 0.07);
     glVertex2f(-0.67f, 0.07f);
      glVertex2f(-0.67f, 0.15);
@@ -115,7 +109,7 @@ glEnd();
     glEnd();
 
     glBegin(GL_POLYGON);   ////next to left middle section window a
-    glColor3ub(241,255,241);
+    glColor3ub(281,155,241);
 
     glVertex2f(-0.635f, 0.075);
     glVertex2f(-0.665f, 0.075f);
@@ -125,14 +119,14 @@ glEnd();
 
 glLineWidth(1);
     glBegin(GL_LINES);      ////next to left middle section window b
-    glColor3ub(168,168,168);
+    glColor3ub(118,148,108);
 
 glVertex2f(-0.649f, 0.075);
     glVertex2f(-0.649f, 0.145f);
     glEnd();
 
     glBegin(GL_POLYGON);    ////next to left top section window
-    glColor3ub(208,216,209);
+    glColor3ub(108,226,109);
 
     glVertex2f(-0.63f, 0.20);
     glVertex2f(-0.67f, 0.20f);
@@ -141,24 +135,30 @@ glVertex2f(-0.649f, 0.075);
     glEnd();
 
 glBegin(GL_POLYGON);       ////next to top middle section window a
-    glColor3ub(241,255,241);
+    glColor3ub(141,355,241);
 
     glVertex2f(-0.635f, 0.205);
     glVertex2f(-0.665f, 0.205f);
     glVertex2f(-0.665f, 0.275);
     glVertex2f(-0.635f, 0.275f);
     glEnd();
-
     glLineWidth(1);
     glBegin(GL_LINES);    ////next to left top section window b
-    glColor3ub(168,168,168);
+    glColor3ub(268,164,118);
+    
+    
+    
+    
+    
+    
+    
 
     glVertex2f(-0.649f, 0.205);
     glVertex2f(-0.649f, 0.275f);
     glEnd();
 
     glBegin(GL_POLYGON);   ////next to left below section window
-    glColor3ub(208,216,209);
+    glColor3ub(201,116,109);
 
     glVertex2f(-0.63f, -0.05);
     glVertex2f(-0.67f, -0.05f);
@@ -167,25 +167,34 @@ glBegin(GL_POLYGON);       ////next to top middle section window a
     glEnd();
 
     glBegin(GL_POLYGON);    ////next to left below section window a
-    glColor3ub(241,255,241);
+    glColor3ub(211,235,211);
 
     glVertex2f(-0.635f, -0.045);
     glVertex2f(-0.665f, -0.045f);
     glVertex2f(-0.665f, 0.025);
     glVertex2f(-0.635f, 0.025f);
     glEnd();
-
 glLineWidth(1);
     glBegin(GL_LINES);     ////next to left below section window b
-    glColor3ub(168,168,168);
+    glColor3ub(128,368,168);
 
     glVertex2f(-0.649f, -0.045);
     glVertex2f(-0.649f, 0.025f);
     glEnd();
 
 glBegin(GL_POLYGON);      ////next to left below section window 2
-    glColor3ub(208,216,209);
+    glColor3ub(108,246,109);
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     glVertex2f(-0.63f, -0.14);
     glVertex2f(-0.67f, -0.14f);
     glVertex2f(-0.67f, -0.06);
@@ -193,7 +202,7 @@ glBegin(GL_POLYGON);      ////next to left below section window 2
     glEnd();
 
     glBegin(GL_POLYGON);   ////next to left below section window a 2
-    glColor3ub(241,255,241);
+    glColor3ub(242,215,141);
 
     glVertex2f(-0.635f, -0.135f);
     glVertex2f(-0.665f, -0.135f);
@@ -203,14 +212,13 @@ glBegin(GL_POLYGON);      ////next to left below section window 2
 
 glLineWidth(1);
     glBegin(GL_LINES);    ////next to left below section window b 2
-    glColor3ub(168,168,168);
+    glColor3ub(164,160,163);
 
 glVertex2f(-0.649f, -0.135);
     glVertex2f(-0.649f, -0.065f);
     glEnd();
     glBegin(GL_POLYGON);   //// middle section window 1
     glColor3ub(208,216,209);
-
     glVertex2f(-0.54f, -0.12);
     glVertex2f(-0.58f, -0.12f);
     glVertex2f(-0.58f, -0.04);
@@ -218,8 +226,11 @@ glVertex2f(-0.649f, -0.135);
     glEnd();
 
     glBegin(GL_POLYGON);    //// middle section window 1
-    glColor3ub(241,255,241);
+    glColor3ub(141,355,241);
 
+    
+    
+    
     glVertex2f(-0.545f, -0.115f);
     glVertex2f(-0.575f, -0.115f);
     glVertex2f(-0.575f, -0.045);
@@ -260,7 +271,6 @@ glBegin(GL_POLYGON);  //// middle section window 2
     glVertex2f(-0.559f, 0.145f);
     glEnd();
 
-
     glBegin(GL_POLYGON);  //// middle section window 3 top
     glColor3ub(208,216,209);
 
@@ -287,8 +297,7 @@ glBegin(GL_POLYGON);  //// middle section window 2
     glVertex2f(-0.559f, 0.275f);
     glEnd();
 
-
-    glBegin(GL_POLYGON);   //// right most section window 1
+    glBegin(GL_POLYGON);   ////// right most section window 1
     glColor3ub(208,216,209);
 
     glVertex2f(-0.46f, -0.12);
@@ -315,7 +324,6 @@ glBegin(GL_POLYGON);  //// middle section window 2
     glEnd();
 glBegin(GL_POLYGON);// right most section window 2
     glColor3ub(208,216,209);
-
     glVertex2f(-0.46f, -0.02);
     glVertex2f(-0.50f, -0.02f);
     glVertex2f(-0.50f, 0.06);
@@ -390,7 +398,6 @@ glBegin(GL_POLYGON);    //// right most section window 4
     glVertex2f(-0.479f, 0.185);
     glVertex2f(-0.479f, 0.255f);
     glEnd();
-
 
     glBegin(GL_POLYGON);  //// right most section window 5
     glColor3ub(208,216,209);
@@ -477,9 +484,7 @@ glBegin(GL_POLYGON); ////left side door frame
     glVertex2f(0.64f, 0.00f);
     glVertex2f(0.665f, 0.04f);
     glVertex2f(0.69f, 0.00f);
-
-
-
+    
     glEnd();
     glBegin(GL_POLYGON); ////left side door
     glColor3ub(188,138,105);
@@ -488,8 +493,6 @@ glBegin(GL_POLYGON); ////left side door frame
     glVertex2f(0.65f, -0.15f);
     glVertex2f(0.65f, -0.03f);
     glVertex2f(0.68f, -0.03f);
-
-
 
     glEnd();
 
@@ -533,6 +536,12 @@ glBegin(GL_POLYGON); ////left side window a blue
     glVertex2f(0.61f, -0.115f);
     glEnd();
 
+    
+    
+    
+    
+    
+    
     glLineWidth(2);
     glBegin(GL_LINES); ////left side window middle border
     glColor3ub(173,118,98);
@@ -579,6 +588,14 @@ glBegin(GL_POLYGON); ////left side window 2
     glEnd();
 
 
+    
+    
+    
+    
+    
+    
+    
+    
     glBegin(GL_POLYGON); ////right side window a blue
     glColor3ub(172,213,231);
 
@@ -622,7 +639,6 @@ glBegin(GL_POLYGON); ////Attic window a blue
     glVertex2f(0.76f, 0.05f);
     glEnd();
 }
-
 void school()
 {
 
@@ -637,7 +653,6 @@ void school()
     glVertex2f(-.10f,.00f);
 
     glEnd();
-
 
     glBegin(GL_POLYGON);
     glColor3ub(189, 106, 102);
@@ -672,10 +687,8 @@ void school()
 
     glBegin(GL_POLYGON);
     glColor3ub(105, 94, 100);
-
     glVertex2d(.00f,.24f);
     glVertex2d(.30f,.24f);
-
     glVertex2d(.26f,.28f);
     glVertex2d(.04f,.28f);
     glEnd();
@@ -683,42 +696,29 @@ void school()
 ////window 1
 
     glBegin(GL_POLYGON);
-
     glColor3ub(245, 253, 255);
-
     glVertex2d(.03f,.09f);
     glVertex2d(.07f,.09f);
-
     glVertex2d(.07f,.12f);
     glVertex2d(.03f,.12f);
     glEnd();
 
-
-
     glBegin(GL_POLYGON);
-
     glColor3ub(25, 31, 45);
-
     glVertex2d(.04f,.10f);
     glVertex2d(.06f,.10f);
-
     glVertex2d(.06f,.12f);
     glVertex2d(.04f,.12f);
     glEnd();
 
 ////window 2
     glBegin(GL_POLYGON);
-
     glColor3ub(245, 253, 255);
-
     glVertex2d(.13f,.09f);
     glVertex2d(.17f,.09f);
-
     glVertex2d(.17f,.12f);
     glVertex2d(.13f,.12f);
     glEnd();
-
-
 
     glBegin(GL_POLYGON);
 
@@ -734,46 +734,31 @@ void school()
 ////window 3
 
     glBegin(GL_POLYGON);
-
     glColor3ub(245, 253, 255);
-
     glVertex2d(.23f,.09f);
     glVertex2d(.27f,.09f);
-
     glVertex2d(.27f,.12f);
     glVertex2d(.23f,.12f);
     glEnd();
 
-
-
     glBegin(GL_POLYGON);
-
     glColor3ub(25, 31, 45);
-
     glVertex2d(0.24f,0.10f);
     glVertex2d(0.26f,0.10f);
-
     glVertex2d(0.26f,0.12f);
     glVertex2d(0.24f,0.12f);
-
     glEnd();
 
 ////2nd floor windows.............
 
 ////window 1
     glBegin(GL_POLYGON);
-
     glColor3ub(245, 253, 255);
-
     glVertex2d(.03f,.21f);
     glVertex2d(.07f,.21f);
-
     glVertex2d(.07f,.24f);
     glVertex2d(.03f,.24f);
     glEnd();
-
-
-
     glBegin(GL_POLYGON);
 
     glColor3ub(25, 31, 45);
@@ -787,18 +772,13 @@ void school()
 
 ////window 2
     glBegin(GL_POLYGON);
-
     glColor3ub(245, 253, 255);
-
     glVertex2d(.13f,.21f);
     glVertex2d(.17f,.21f);
-
     glVertex2d(.17f,.24f);
     glVertex2d(.13f,.24f);
     glEnd();
-
-
-
+    
     glBegin(GL_POLYGON);
 
     glColor3ub(25, 31, 45);
@@ -810,6 +790,15 @@ void school()
     glVertex2d(.14f,.24f);
     glEnd();
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
 ////window 3
 
     glBegin(GL_POLYGON);
@@ -822,8 +811,6 @@ void school()
     glVertex2d(.27f,.24f);
     glVertex2d(.23f,.24f);
     glEnd();
-
-
 
     glBegin(GL_POLYGON);
 
@@ -839,8 +826,6 @@ void school()
 
 void prayerplace()
 {
-
-
     int i;         ////Ground
 
     GLfloat x9=0.14f;
@@ -859,7 +844,6 @@ void prayerplace()
             y9 + (radius * sin(i * twicePi / triangleAmount))
         );
     }
-
     glEnd();
 
     glBegin(GL_POLYGON);  ////left side
@@ -894,8 +878,6 @@ void prayerplace()
 
     glEnd();
 
-
-
     glBegin(GL_POLYGON);  ////right side main
     glColor3ub(111,106,156);
     glVertex2f(0.10f,0.03f);
@@ -904,7 +886,6 @@ void prayerplace()
     glVertex2f(0.25f,-0.20f);
     glVertex2f(0.095f,-0.30f);
     glEnd();
-
 
     glBegin(GL_POLYGON);  ////right side shadow
     glColor3ub(89,82,72);
@@ -915,9 +896,6 @@ void prayerplace()
     glVertex2f(0.307f, 0.00f);
     glVertex2f(0.10f,0.04f);
 
-
-
-
     glEnd();
 
     glBegin(GL_POLYGON);  ////right side roof
@@ -927,12 +905,7 @@ void prayerplace()
     glVertex2f(0.307f, 0.018f);
     glVertex2f(0.307f,0.00f);
 
-
-
-
     glEnd();
-
-
 
     glBegin(GL_POLYGON);  ////right side grill
     glColor3ub(168,73,13);
@@ -943,8 +916,6 @@ void prayerplace()
     glVertex2f(0.13f,-0.30f);
     glEnd();
 
-
-
     glBegin(GL_POLYGON);  ////right side grill
     glColor3ub(98,106,109);
     glVertex2f(0.19f,-0.18f);
@@ -953,8 +924,6 @@ void prayerplace()
     glVertex2f(0.20f,-0.30f);
     glVertex2f(0.19f,-0.30f);
     glEnd();
-
-
     glBegin(GL_POLYGON);   ////right side grill
     glColor3ub(146,170,180);
     glVertex2f(0.20f,-0.18f);
@@ -962,8 +931,6 @@ void prayerplace()
     glVertex2f(0.23f,-0.30f);
     glVertex2f(0.20f,-0.30f);
     glEnd();
-
-
     glBegin(GL_POLYGON);   ////right side grill
     glColor3ub(237,244,237);
 glVertex2f(0.205f,-0.21f);
@@ -973,9 +940,6 @@ glVertex2f(0.205f,-0.21f);
      glVertex2f(0.215f,-0.20f);
 
     glEnd();
-
-
-
     glBegin(GL_POLYGON);   ////right side grill depth triangle
     glColor3ub(159,155,196);
     glVertex2f(0.13f,-0.08f);
@@ -990,79 +954,57 @@ glEnd();
     glVertex2f(0.27f,-0.05f);
     glVertex2f(0.27f,-0.075f);
     glVertex2f(0.14f,-0.05f);
-
-
     glEnd();
 
     glBegin(GL_POLYGON);   ////left side top window
     glColor3ub(2,35,66);
-
     glVertex2f(0.005f,-0.03f);
     glVertex2f(0.09f, -0.005f);
     glVertex2f(0.09f,-0.035f);
     glVertex2f(0.01f,-0.055f);
-
-
     glEnd();
-
-
     glBegin(GL_POLYGON);   ////left side Door
     glColor3ub(188,138,105);
-
     glVertex2f(0.03f,-0.285f);
     glVertex2f(0.07f,-0.295f);
-
     glVertex2f(0.07f,-0.12f);
     glVertex2f(0.02f,-0.14f);
-
     glEnd();
 
-
-    glBegin(GL_POLYGON);   ////Below border left side
+  glBegin(GL_POLYGON);   ////Below border left side
     glColor3ub(102,104,103);
 
     glVertex2f(0.01f,-0.27f);
     glVertex2f(0.095f,-0.298f);
     glVertex2f(0.095f,-0.315f);
     glVertex2f(0.01f,-0.285f);
-
-
     glEnd();
-
 
     glBegin(GL_POLYGON);   ////right side border below 1
     glColor3ub(102,104,103);
-
     glVertex2f(0.095f,-0.30f);
     glVertex2f(0.095f,-0.315f);
-
     glVertex2f(0.11f,-0.295f);
     glVertex2f(0.11f,-0.275f);
-
     glEnd();
 
     glBegin(GL_POLYGON);   ////right side border below 2
     glColor3ub(102,104,103);
-
     glVertex2f(0.13f,-0.314f);
     glVertex2f(0.11f,-0.30f);
     glVertex2f(0.11f,-0.275f);
     glVertex2f(0.13f,-0.295f);
-
     glEnd();
-
     glBegin(GL_POLYGON);   ////right side border final
     glColor3ub(102,104,103);
     glVertex2f(0.13f,-0.296f);
     glVertex2f(0.27f,-0.30f);
     glVertex2f(0.27f,-0.315f);
-
     glVertex2f(0.13f,-0.315f);
 
     glEnd();
 
 }
-
 void college ()
 {
     glBegin(GL_POLYGON); ////Floor
@@ -1080,7 +1022,6 @@ glEnd();
     glVertex2f(-0.28f,-0.10f);
     glVertex2f(-0.28f,0.25f);
     glVertex2f(-0.44f,0.25f);
-
     glEnd();
 glBegin(GL_POLYGON);   ////Door-portion
     glColor3ub(0,255,255);
@@ -1108,8 +1049,6 @@ glBegin(GL_POLYGON);   ////Door-portion
     glVertex2f(-0.439f,0.25f);
 
 glEnd();
-
-
     glBegin(GL_POLYGON); ////black-shadow bottom
     glColor3ub(105,105,105);
     glVertex2f(-0.44f,-0.10f);
@@ -1118,8 +1057,7 @@ glEnd();
     glVertex2f(-0.44f,-0.102f);
 
     glEnd();
-
-
+    
     glBegin(GL_POLYGON); ////right-side
     glColor3ub(30,144,255);
     glVertex2f(-0.28f,-0.10f);
@@ -1138,8 +1076,6 @@ glBegin(GL_POLYGON); ////Upper-side shadow
 
     glEnd();
 
-
-
     glBegin(GL_POLYGON); ////Upper-side
     glColor3ub(30,144,255);
     glVertex2f(-0.28f,0.25f);
@@ -1148,7 +1084,6 @@ glBegin(GL_POLYGON); ////Upper-side shadow
     glVertex2f(-0.44f,0.25f);
 
     glEnd();
-
 
     glBegin(GL_POLYGON); ////black-shadow bold left section up
     glColor3ub(105,105,105);
@@ -1202,7 +1137,6 @@ glBegin(GL_POLYGON); ////black-shadow bold 3.3
 
     glEnd();
 
-
     glBegin(GL_POLYGON); ////black-shadow
     glColor3ub(105,105,105);
     glVertex2f(-0.25f,-0.06f);
@@ -1239,7 +1173,6 @@ glBegin(GL_POLYGON); ////black-shadow bold 3.3
 
     glEnd();
 
-
     glBegin(GL_POLYGON); //// Window bottom left a
     glColor3ub(112,164,177);
     glVertex2f(-0.418f,-0.068f);
@@ -1257,9 +1190,6 @@ glBegin(GL_POLYGON); ////black-shadow bold 3.3
 
     glEnd();
 
-
-
-
     glBegin(GL_POLYGON); //// Window middle left
     glColor3ub(241,220,203);
     glVertex2f(-0.42f,0.05f);
@@ -1268,7 +1198,6 @@ glBegin(GL_POLYGON); ////black-shadow bold 3.3
     glVertex2f(-0.42f,0.12f);
 
     glEnd();
-
 
     glBegin(GL_POLYGON); //// Window middle left a
     glColor3ub(112,164,177);
@@ -1286,7 +1215,6 @@ glBegin(GL_POLYGON); ////black-shadow bold 3.3
     glVertex2f(-0.405f,0.12f);
 
     glEnd();
-
 
      glBegin(GL_POLYGON); //// Window top left
     glColor3ub(241,220,203);
@@ -1324,7 +1252,6 @@ glBegin(GL_POLYGON);   //// Window bottom right
 
     glEnd();
 
-
     glBegin(GL_POLYGON); //// Window bottom right a
     glColor3ub(112,164,177);
     glVertex2f(-0.318f,-0.068f);
@@ -1348,10 +1275,9 @@ glBegin(GL_POLYGON);   //// Window bottom right
     glVertex2f(-0.29f,0.05f);
     glVertex2f(-0.29f,0.12f);
     glVertex2f(-0.32f,0.12f);
-
+    
     glEnd();
-
-
+    
     glBegin(GL_POLYGON); //// Window middle right a
     glColor3ub(112,164,177);
     glVertex2f(-0.318f, 0.054f);
@@ -1359,8 +1285,8 @@ glBegin(GL_POLYGON);   //// Window bottom right
     glVertex2f(-0.292f,0.116f);
     glVertex2f(-0.318f,0.116f);
 
+    
     glEnd();
-
     glLineWidth(1);
     glBegin(GL_LINES); //// Window middle right middle border
     glColor3ub(241,220,203);
@@ -1368,7 +1294,7 @@ glBegin(GL_POLYGON);   //// Window bottom right
     glVertex2f(-0.305f,0.12f);
 
     glEnd();
-
+    
     glBegin(GL_POLYGON); /////// Window top right
     glColor3ub(241,220,203);
     glVertex2f(-0.32f,0.15f);
@@ -1377,7 +1303,6 @@ glBegin(GL_POLYGON);   //// Window bottom right
     glVertex2f(-0.32f,0.22f);
 
     glEnd();
-
 
     glBegin(GL_POLYGON); /////// Window top right a
     glColor3ub(112,164,177);
@@ -1395,7 +1320,6 @@ glBegin(GL_POLYGON);   //// Window bottom right
     glVertex2f(-0.305f,0.22f);
 
     glEnd();
-
 }
 void display(void)
 {
@@ -1431,7 +1355,6 @@ void display(void)
 
     glFlush ();
 }
-
 void init (void)
 {
     glClearColor (0.0, 0.0, 0.0, 0.0);
@@ -1451,6 +1374,13 @@ int main(int argc, char** argv)
     glutMainLoop();
     return 0;
 }
+
+
+
+
+
+
+
 
 
     
