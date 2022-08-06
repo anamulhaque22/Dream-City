@@ -37,7 +37,7 @@ void university()
 
     
 
-    glBegin(GL_POLYGON); ;   ////next to left below section
+ glBegin(GL_POLYGON); ;   ////next to left below section
     glColor3ub(120,225,90);
     glVertex2f(-0.69f, -0.15f);
     glVertex2f(-0.61f, -0.15f);
@@ -45,7 +45,7 @@ void university()
     glVertex2f(-0.69f, 0.05f);
     glEnd();
 
-    glBegin(GL_POLYGON);     ////next to left middle section
+  glBegin(GL_POLYGON);     ////next to left middle section
     glColor3ub(225,201,473);
 
     glVertex2f(-0.61f, 0.05);
@@ -54,7 +54,7 @@ void university()
     glVertex2f(-0.61f, 0.17f);
     glEnd();
 
-    glBegin(GL_POLYGON);   ////next to left top section
+   glBegin(GL_POLYGON);   ////next to left top section
     glColor3ub(85,85,85);
     glVertex2f(-0.69f, 0.17);
     glVertex2f(-0.61f, 0.17f);
@@ -1288,7 +1288,7 @@ glBegin(GL_POLYGON); ////black-shadow bold 3.3
     glEnd();
 
 
-    glBegin(GL_POLYGON); //// Window top left
+     glBegin(GL_POLYGON); //// Window top left
     glColor3ub(241,220,203);
     glVertex2f(-0.42f,0.15f);
     glVertex2f(-0.39f,0.15f);
@@ -1454,6 +1454,7 @@ int main(int argc, char** argv)
     glutMainLoop();
     return 0;
 }
+
 
     
     
