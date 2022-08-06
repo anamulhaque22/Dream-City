@@ -121,6 +121,42 @@ void roadBlock()
 	glEnd();
 }
 
+void tunnel()
+{
+    glBegin(GL_POLYGON); // tunnel
+    glColor3ub(16, 16, 16);
+    glVertex2f(0.12f,0.20f);
+    glVertex2f(0.12f,0.25f);
+    glVertex2f(0.04f,0.27f);
+    glVertex2f(0.02f,0.23f);
+
+
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(82, 82, 82);
+    glVertex2f(0.04f,0.27f);
+    glVertex2f(0.03f,0.225f);
+     glVertex2f(0.02f,0.23f);
+
+
+    glEnd();
+
+  glBegin(GL_POLYGON);
+    glColor3ub(82, 82, 82);
+
+
+    glVertex2f(0.12f,0.25f);
+    glVertex2f(0.12f,0.20f);
+     glVertex2f(0.11f,0.20f);
+
+
+
+glEnd();
+
+
+}
+
 void display(void)
 {
 	// clear color and depth buffers
@@ -128,9 +164,11 @@ void display(void)
 	greenBackground();
 	mountainArea();
 	roadBlock();
-
+    tunnel();
 	glFlush();
 }
+
+
 
 void windowModel(void)
 {
