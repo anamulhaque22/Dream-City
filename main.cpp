@@ -5,7 +5,43 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
 //#include<MMSystem.h>
+ void river()
+ {
 
+     glBegin(GL_POLYGON); // river front
+
+    glColor3ub(56, 180, 232);
+    glVertex2f(1.00f,-0.30);
+    glVertex2f(0.90f,-0.29f);
+    glVertex2f(0.80f,-0.28f);
+    glVertex2f(0.70f,-0.38f);
+    glVertex2f(0.59f,-0.50f);
+    glVertex2f(0.51f,-0.53f);
+    glVertex2f(0.46f,-0.67f);
+    glVertex2f(0.40f,-0.78f);
+    glVertex2f(0.35f,-0.88f);
+    glVertex2f(0.26f,-0.84f);
+    glVertex2f(0.10f,-1.00f);
+    glVertex2f(1.00f,-1.00f);
+
+
+    glEnd();
+
+
+
+    glBegin(GL_POLYGON); // river back 3
+    glColor3ub(56, 180, 232);
+    glVertex2f(0.27f,0.25f);
+    glVertex2f(0.15f,0.05f);
+    glVertex2f(0.11f,0.05f);
+    glVertex2f(0.24f,0.24f);
+
+
+
+    glEnd();
+
+
+ }
 void mountainArea()
 {
     glBegin(GL_POLYGON); // sky
@@ -59,7 +95,7 @@ void roadBlock()
     glBegin(GL_POLYGON); // road back 1
     glColor3ub(88, 92, 90);
     glVertex2f(0.12f, 0.20f);
-    glVertex2f(0.00f, 0.20f);
+    glVertex2f(0.02f, 0.23f);
     glVertex2f(-0.74f, -0.80f);
     glVertex2f(-0.49f, -0.81f);
     glEnd();
@@ -103,21 +139,21 @@ void university()
     glLineWidth(2); // university road lines
     glBegin(GL_LINES);
     glColor3ub(255, 255, 255);
-    glVertex2f(-1.00f, -0.37f);
-    glVertex2f(1.00f, -0.37f);
+    glVertex2f(-0.56f, -0.15f);
+    glVertex2f(-0.50f, -0.50f);
     glEnd();
 
     glBegin(GL_POLYGON);
     glColor3ub(200, 100, 600);
-    glVertex2f(-0.82f, -0.08f);
-    glVertex2f(-0.74f, -0.20f);
-    glVertex2f(-0.36f, -0.20f);
-    glVertex2f(-0.44f, -0.08f);
+    glVertex2f(-0.82f,-0.08f);
+    glVertex2f(-0.74f,-0.20f);
+    glVertex2f(-0.36f,-0.20f);
+    glVertex2f(-0.44f,-0.08f);
 
     glEnd();
 
-    glBegin(GL_POLYGON); ////left side
-    glColor3ub(300, 200, 100);
+    glBegin(GL_POLYGON);       ////left side
+    glColor3ub(300,200,100);
     glVertex2f(-0.75f, -0.10f);
     glVertex2f(-0.69f, -0.15f);
     glVertex2f(-0.69f, 0.30);
@@ -125,25 +161,24 @@ void university()
     glEnd();
 
     glLineWidth(4);
-    glBegin(GL_LINES); ////left side border
-    glColor3ub(300, 100, 200);
+    glBegin(GL_LINES);        ////left side border
+    glColor3ub(300,100, 200);
     glVertex2f(-0.69f, 0.05f);
     glVertex2f(-0.75f, 0.00f);
     glVertex2f(-0.69f, 0.17);
     glVertex2f(-0.75f, 0.11f);
     glEnd();
 
-    glBegin(GL_POLYGON);
-    ; ////next to left below section
-    glColor3ub(120, 225, 90);
+    glBegin(GL_POLYGON); ;   ////next to left below section
+    glColor3ub(120,225,90);
     glVertex2f(-0.69f, -0.15f);
     glVertex2f(-0.61f, -0.15f);
     glVertex2f(-0.61f, 0.05);
     glVertex2f(-0.69f, 0.05f);
     glEnd();
 
-    glBegin(GL_POLYGON); ////next to left middle section
-    glColor3ub(225, 201, 473);
+    glBegin(GL_POLYGON);     ////next to left middle section
+    glColor3ub(225,201,473);
 
     glVertex2f(-0.61f, 0.05);
     glVertex2f(-0.69f, 0.05f);
@@ -151,25 +186,25 @@ void university()
     glVertex2f(-0.61f, 0.17f);
     glEnd();
 
-    glBegin(GL_POLYGON); ////next to left top section
-    glColor3ub(85, 85, 85);
+    glBegin(GL_POLYGON);   ////next to left top section
+    glColor3ub(85,85,85);
     glVertex2f(-0.69f, 0.17);
     glVertex2f(-0.61f, 0.17f);
     glVertex2f(-0.61f, 0.30);
     glVertex2f(-0.69f, 0.30f);
 
-    glEnd();
+glEnd();
 
-    glBegin(GL_POLYGON); ////middle section whole
-    glColor3ub(105, 226, 0);
+    glBegin(GL_POLYGON);   ////middle section whole
+    glColor3ub(105,226,0);
     glVertex2f(-0.61f, -0.15f);
     glVertex2f(-0.51f, -0.15f);
     glVertex2f(-0.51f, 0.33);
     glVertex2f(-0.61f, 0.33f);
     glEnd();
 
-    glBegin(GL_POLYGON); ////middle section triangle
-    glColor3ub(131, 133, 135);
+    glBegin(GL_POLYGON);   ////middle section triangle
+    glColor3ub(131,133,135);
 
     glVertex2f(-0.61f, 0.33f);
     glVertex2f(-0.61f, 0.30f);
@@ -177,8 +212,8 @@ void university()
     glEnd();
 
     glLineWidth(6);
-    glBegin(GL_LINES); ////next to left side border
-    glColor3ub(331, 111, 511);
+    glBegin(GL_LINES);       ////next to left side border
+    glColor3ub(331,111,511);
     glVertex2f(-0.69f, 0.05f);
     glVertex2f(-0.61f, 0.05f);
     glVertex2f(-0.69f, 0.17f);
@@ -186,34 +221,33 @@ void university()
 
     glEnd();
 
-    glBegin(GL_POLYGON);
-    ; ////right section whole
-    glColor3ub(185, 185, 195);
+    glBegin(GL_POLYGON); ;  ////right section whole
+    glColor3ub(185,185,195);
     glVertex2f(-0.51f, -0.15f);
     glVertex2f(-0.45f, -0.15f);
     glVertex2f(-0.45f, 0.36);
     glVertex2f(-0.51f, 0.36f);
     glEnd();
 
-    glBegin(GL_POLYGON);
-    ; ////right section triangle
-    glColor3ub(131, 133, 135);
+
+    glBegin(GL_POLYGON); ;  ////right section triangle
+    glColor3ub(131,133,135);
     glVertex2f(-0.51f, 0.36);
     glVertex2f(-0.51f, 0.33f);
     glVertex2f(-0.52f, 0.33f);
 
     glEnd();
 
-    glBegin(GL_POLYGON); ////next to left middle section window
-    glColor3ub(208, 216, 209);
+    glBegin(GL_POLYGON);    ////next to left middle section window
+    glColor3ub(208,216,209);
     glVertex2f(-0.63f, 0.07);
     glVertex2f(-0.67f, 0.07f);
-    glVertex2f(-0.67f, 0.15);
+     glVertex2f(-0.67f, 0.15);
     glVertex2f(-0.63f, 0.15f);
     glEnd();
 
-    glBegin(GL_POLYGON); ////next to left middle section window a
-    glColor3ub(241, 255, 241);
+    glBegin(GL_POLYGON);   ////next to left middle section window a
+    glColor3ub(241,255,241);
 
     glVertex2f(-0.635f, 0.075);
     glVertex2f(-0.665f, 0.075f);
@@ -221,16 +255,16 @@ void university()
     glVertex2f(-0.635f, 0.145f);
     glEnd();
 
-    glLineWidth(1);
-    glBegin(GL_LINES); ////next to left middle section window b
-    glColor3ub(168, 168, 168);
+glLineWidth(1);
+    glBegin(GL_LINES);      ////next to left middle section window b
+    glColor3ub(168,168,168);
 
-    glVertex2f(-0.649f, 0.075);
+glVertex2f(-0.649f, 0.075);
     glVertex2f(-0.649f, 0.145f);
     glEnd();
 
-    glBegin(GL_POLYGON); ////next to left top section window
-    glColor3ub(208, 216, 209);
+    glBegin(GL_POLYGON);    ////next to left top section window
+    glColor3ub(208,216,209);
 
     glVertex2f(-0.63f, 0.20);
     glVertex2f(-0.67f, 0.20f);
@@ -238,8 +272,8 @@ void university()
     glVertex2f(-0.63f, 0.28f);
     glEnd();
 
-    glBegin(GL_POLYGON); ////next to top middle section window a
-    glColor3ub(241, 255, 241);
+glBegin(GL_POLYGON);       ////next to top middle section window a
+    glColor3ub(241,255,241);
 
     glVertex2f(-0.635f, 0.205);
     glVertex2f(-0.665f, 0.205f);
@@ -248,15 +282,15 @@ void university()
     glEnd();
 
     glLineWidth(1);
-    glBegin(GL_LINES); ////next to left top section window b
-    glColor3ub(168, 168, 168);
+    glBegin(GL_LINES);    ////next to left top section window b
+    glColor3ub(168,168,168);
 
     glVertex2f(-0.649f, 0.205);
     glVertex2f(-0.649f, 0.275f);
     glEnd();
 
-    glBegin(GL_POLYGON); ////next to left below section window
-    glColor3ub(208, 216, 209);
+    glBegin(GL_POLYGON);   ////next to left below section window
+    glColor3ub(208,216,209);
 
     glVertex2f(-0.63f, -0.05);
     glVertex2f(-0.67f, -0.05f);
@@ -264,8 +298,8 @@ void university()
     glVertex2f(-0.63f, 0.03f);
     glEnd();
 
-    glBegin(GL_POLYGON); ////next to left below section window a
-    glColor3ub(241, 255, 241);
+    glBegin(GL_POLYGON);    ////next to left below section window a
+    glColor3ub(241,255,241);
 
     glVertex2f(-0.635f, -0.045);
     glVertex2f(-0.665f, -0.045f);
@@ -273,16 +307,16 @@ void university()
     glVertex2f(-0.635f, 0.025f);
     glEnd();
 
-    glLineWidth(1);
-    glBegin(GL_LINES); ////next to left below section window b
-    glColor3ub(168, 168, 168);
+glLineWidth(1);
+    glBegin(GL_LINES);     ////next to left below section window b
+    glColor3ub(168,168,168);
 
     glVertex2f(-0.649f, -0.045);
     glVertex2f(-0.649f, 0.025f);
     glEnd();
 
-    glBegin(GL_POLYGON); ////next to left below section window 2
-    glColor3ub(208, 216, 209);
+glBegin(GL_POLYGON);      ////next to left below section window 2
+    glColor3ub(208,216,209);
 
     glVertex2f(-0.63f, -0.14);
     glVertex2f(-0.67f, -0.14f);
@@ -290,8 +324,8 @@ void university()
     glVertex2f(-0.63f, -0.06f);
     glEnd();
 
-    glBegin(GL_POLYGON); ////next to left below section window a 2
-    glColor3ub(241, 255, 241);
+    glBegin(GL_POLYGON);   ////next to left below section window a 2
+    glColor3ub(241,255,241);
 
     glVertex2f(-0.635f, -0.135f);
     glVertex2f(-0.665f, -0.135f);
@@ -299,15 +333,15 @@ void university()
     glVertex2f(-0.635f, -0.065f);
     glEnd();
 
-    glLineWidth(1);
-    glBegin(GL_LINES); ////next to left below section window b 2
-    glColor3ub(168, 168, 168);
+glLineWidth(1);
+    glBegin(GL_LINES);    ////next to left below section window b 2
+    glColor3ub(168,168,168);
 
-    glVertex2f(-0.649f, -0.135);
+glVertex2f(-0.649f, -0.135);
     glVertex2f(-0.649f, -0.065f);
     glEnd();
-    glBegin(GL_POLYGON); //// middle section window 1
-    glColor3ub(208, 216, 209);
+    glBegin(GL_POLYGON);   //// middle section window 1
+    glColor3ub(208,216,209);
 
     glVertex2f(-0.54f, -0.12);
     glVertex2f(-0.58f, -0.12f);
@@ -315,8 +349,8 @@ void university()
     glVertex2f(-0.54f, -0.04f);
     glEnd();
 
-    glBegin(GL_POLYGON); //// middle section window 1
-    glColor3ub(241, 255, 241);
+    glBegin(GL_POLYGON);    //// middle section window 1
+    glColor3ub(241,255,241);
 
     glVertex2f(-0.545f, -0.115f);
     glVertex2f(-0.575f, -0.115f);
@@ -325,15 +359,15 @@ void university()
     glEnd();
 
     glLineWidth(1);
-    glBegin(GL_LINES); //// middle section window 1
-    glColor3ub(168, 168, 168);
+    glBegin(GL_LINES);   //// middle section window 1
+    glColor3ub(168,168,168);
 
     glVertex2f(-0.559f, -0.115);
     glVertex2f(-0.559f, -0.045f);
     glEnd();
 
-    glBegin(GL_POLYGON); //// middle section window 2
-    glColor3ub(208, 216, 209);
+glBegin(GL_POLYGON);  //// middle section window 2
+    glColor3ub(208,216,209);
 
     glVertex2f(-0.54f, 0.07);
     glVertex2f(-0.58f, 0.07f);
@@ -341,8 +375,8 @@ void university()
     glVertex2f(-0.54f, 0.15f);
     glEnd();
 
-    glBegin(GL_POLYGON); //// middle section window 2
-    glColor3ub(241, 255, 241);
+    glBegin(GL_POLYGON);   //// middle section window 2
+    glColor3ub(241,255,241);
 
     glVertex2f(-0.545f, 0.075f);
     glVertex2f(-0.575f, 0.075f);
@@ -351,15 +385,16 @@ void university()
     glEnd();
 
     glLineWidth(1);
-    glBegin(GL_LINES); //// middle section window 2
-    glColor3ub(168, 168, 168);
+    glBegin(GL_LINES);   //// middle section window 2
+    glColor3ub(168,168,168);
 
     glVertex2f(-0.559f, 0.075);
     glVertex2f(-0.559f, 0.145f);
     glEnd();
 
-    glBegin(GL_POLYGON); //// middle section window 3 top
-    glColor3ub(208, 216, 209);
+
+    glBegin(GL_POLYGON);  //// middle section window 3 top
+    glColor3ub(208,216,209);
 
     glVertex2f(-0.54f, 0.20);
     glVertex2f(-0.58f, 0.20f);
@@ -367,8 +402,8 @@ void university()
     glVertex2f(-0.54f, 0.28f);
     glEnd();
 
-    glBegin(GL_POLYGON); //// middle section window 3 top
-    glColor3ub(241, 255, 241);
+    glBegin(GL_POLYGON);  //// middle section window 3 top
+    glColor3ub(241,255,241);
 
     glVertex2f(-0.545f, 0.205f);
     glVertex2f(-0.575f, 0.205f);
@@ -377,15 +412,16 @@ void university()
     glEnd();
 
     glLineWidth(1);
-    glBegin(GL_LINES); //// middle section window 3 top
-    glColor3ub(168, 168, 168);
+    glBegin(GL_LINES);   //// middle section window 3 top
+    glColor3ub(168,168,168);
 
     glVertex2f(-0.559f, 0.205);
     glVertex2f(-0.559f, 0.275f);
     glEnd();
 
-    glBegin(GL_POLYGON); //// right most section window 1
-    glColor3ub(208, 216, 209);
+
+    glBegin(GL_POLYGON);   //// right most section window 1
+    glColor3ub(208,216,209);
 
     glVertex2f(-0.46f, -0.12);
     glVertex2f(-0.50f, -0.12f);
@@ -393,8 +429,8 @@ void university()
     glVertex2f(-0.46f, -0.04f);
     glEnd();
 
-    glBegin(GL_POLYGON); /// right most section window 1
-    glColor3ub(241, 255, 241);
+    glBegin(GL_POLYGON);  ///right most section window 1
+    glColor3ub(241,255,241);
 
     glVertex2f(-0.465f, -0.115f);
     glVertex2f(-0.495f, -0.115f);
@@ -403,14 +439,14 @@ void university()
     glEnd();
 
     glLineWidth(1);
-    glBegin(GL_LINES); // right most section window 1
-    glColor3ub(168, 168, 168);
+    glBegin(GL_LINES); //right most section window 1
+    glColor3ub(168,168,168);
 
     glVertex2f(-0.479f, -0.115);
     glVertex2f(-0.479f, -0.045f);
     glEnd();
-    glBegin(GL_POLYGON); // right most section window 2
-    glColor3ub(208, 216, 209);
+glBegin(GL_POLYGON);// right most section window 2
+    glColor3ub(208,216,209);
 
     glVertex2f(-0.46f, -0.02);
     glVertex2f(-0.50f, -0.02f);
@@ -418,8 +454,8 @@ void university()
     glVertex2f(-0.46f, 0.06f);
     glEnd();
 
-    glBegin(GL_POLYGON); // right most section window 2
-    glColor3ub(241, 255, 241);
+    glBegin(GL_POLYGON); //right most section window 2
+    glColor3ub(241,255,241);
 
     glVertex2f(-0.465f, -0.015f);
     glVertex2f(-0.495f, -0.015f);
@@ -429,14 +465,14 @@ void university()
 
     glLineWidth(1);
     glBegin(GL_LINES); ////right most section window 2
-    glColor3ub(168, 168, 168);
+    glColor3ub(168,168,168);
 
     glVertex2f(-0.479f, -0.015);
     glVertex2f(-0.479f, 0.055f);
     glEnd();
 
-    glBegin(GL_POLYGON); //// right most section window 3
-    glColor3ub(208, 216, 209);
+glBegin(GL_POLYGON);  //// right most section window 3
+    glColor3ub(208,216,209);
 
     glVertex2f(-0.46f, 0.08);
     glVertex2f(-0.50f, 0.08f);
@@ -445,9 +481,9 @@ void university()
     glEnd();
 
     glBegin(GL_POLYGON); ////right most section window 3
-    glColor3ub(241, 255, 241);
+    glColor3ub(241,255,241);
 
-    glVertex2f(-0.465f, 0.085f);
+glVertex2f(-0.465f, 0.085f);
     glVertex2f(-0.495f, 0.085f);
     glVertex2f(-0.495f, 0.155);
     glVertex2f(-0.465f, 0.155f);
@@ -455,14 +491,14 @@ void university()
 
     glLineWidth(1);
     glBegin(GL_LINES); ////right most section window 3
-    glColor3ub(168, 168, 168);
+    glColor3ub(168,168,168);
 
     glVertex2f(-0.479f, 0.085);
     glVertex2f(-0.479f, 0.155f);
     glEnd();
 
-    glBegin(GL_POLYGON); //// right most section window 4
-    glColor3ub(208, 216, 209);
+glBegin(GL_POLYGON);    //// right most section window 4
+    glColor3ub(208,216,209);
 
     glVertex2f(-0.46f, 0.18);
     glVertex2f(-0.50f, 0.18f);
@@ -471,7 +507,7 @@ void university()
     glEnd();
 
     glBegin(GL_POLYGON); ////right most section window 4
-    glColor3ub(241, 255, 241);
+    glColor3ub(241,255,241);
 
     glVertex2f(-0.465f, 0.185f);
     glVertex2f(-0.495f, 0.185f);
@@ -481,22 +517,23 @@ void university()
 
     glLineWidth(1);
     glBegin(GL_LINES); ////right most section window 4
-    glColor3ub(168, 168, 168);
+    glColor3ub(168,168,168);
 
     glVertex2f(-0.479f, 0.185);
     glVertex2f(-0.479f, 0.255f);
     glEnd();
 
-    glBegin(GL_POLYGON); //// right most section window 5
-    glColor3ub(208, 216, 209);
+
+    glBegin(GL_POLYGON);  //// right most section window 5
+    glColor3ub(208,216,209);
 
     glVertex2f(-0.46f, 0.28);
     glVertex2f(-0.50f, 0.28f);
     glVertex2f(-0.50f, 0.34);
     glVertex2f(-0.46f, 0.34f);
     glEnd();
-    glBegin(GL_POLYGON); ////right most section window 4
-    glColor3ub(241, 255, 241);
+    glBegin(GL_POLYGON);    ////right most section window 4
+    glColor3ub(241,255,241);
 
     glVertex2f(-0.465f, 0.285f);
     glVertex2f(-0.495f, 0.285f);
@@ -505,11 +542,39 @@ void university()
     glEnd();
 
     glLineWidth(1);
-    glBegin(GL_LINES); ////right most section window 4
-    glColor3ub(168, 168, 168);
+    glBegin(GL_LINES);  ////right most section window 4
+    glColor3ub(168,168,168);
 
     glVertex2f(-0.479f, 0.285);
     glVertex2f(-0.479f, 0.335f);
+    glEnd();
+}
+void tunnel()
+{
+    glBegin(GL_POLYGON); // tunnel
+    glColor3ub(16, 16, 16);
+    glVertex2f(0.12f, 0.20f);
+    glVertex2f(0.12f, 0.25f);
+    glVertex2f(0.04f, 0.27f);
+    glVertex2f(0.02f, 0.23f);
+
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(82, 82, 82);
+    glVertex2f(0.04f, 0.27f);
+    glVertex2f(0.03f, 0.225f);
+    glVertex2f(0.02f, 0.23f);
+
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(82, 82, 82);
+
+    glVertex2f(0.12f, 0.25f);
+    glVertex2f(0.12f, 0.20f);
+    glVertex2f(0.11f, 0.20f);
+
     glEnd();
 }
 void house()
@@ -1429,10 +1494,12 @@ void college()
 void display(void)
 {
     // clear color and depth buffers
+
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     greenBackground();
     mountainArea();
     roadBlock();
+    tunnel();
 
     // buildings method
     glPushMatrix();
@@ -1467,6 +1534,21 @@ void display(void)
     // end of buildings method
 
     glFlush();
+    glColor3ub(82, 82, 82);
+    glVertex2f(0.04f, 0.27f);
+    glVertex2f(0.03f, 0.225f);
+    glVertex2f(0.02f, 0.23f);
+
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(82, 82, 82);
+
+    glVertex2f(0.12f, 0.25f);
+    glVertex2f(0.12f, 0.20f);
+    glVertex2f(0.11f, 0.20f);
+
+    glEnd();
 }
 
 void windowModel(void)
