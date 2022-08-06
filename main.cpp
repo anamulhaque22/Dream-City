@@ -16,7 +16,7 @@ void university()
     glVertex2f(-0.36f,-0.20f);
     glVertex2f(-0.44f,-0.08f);
 
-    glEnd();
+    glEnd();;;
 
     glBegin(GL_POLYGON);       ////left side
     glColor3ub(300,200,100);
