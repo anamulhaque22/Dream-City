@@ -235,3 +235,11 @@
 	<GL/glut.h>
 	<MMSystem.h>
 
+1660076621 source:c:\project\dream city\main.cpp
+	<cstdio>
+	<windows.h>
+	<math.h>
+	<GL/gl.h>
+	<GL/glut.h>
+	<MMSystem.h>
+
