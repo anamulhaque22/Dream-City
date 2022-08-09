@@ -189,6 +189,89 @@ void cloud2()
     glEnd();
 }
 
+void cloud3()
+{
+
+    int i;
+
+    GLfloat x=0.0f;
+    GLfloat y=.86f;
+    GLfloat radius =.05f;
+    int triangleAmount = 20;
+    GLfloat twicePi = 2.0f * PI;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(x, y); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            x + (radius * cos(i *  twicePi / triangleAmount)),
+            y + (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat a=.05f;
+    GLfloat b=.83f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(a, b); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            a + (radius * cos(i *  twicePi / triangleAmount)),
+            b + (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat c=-0.05f;
+    GLfloat d=.83f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(c, d); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            c + (radius * cos(i *  twicePi / triangleAmount)),
+            d + (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat e=.02f;
+    GLfloat f=.8f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(e, f); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            e + (radius * cos(i *  twicePi / triangleAmount)),
+            f+ (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat g=.1f;
+    GLfloat h=.82f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(g, h); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            g + (radius * cos(i *  twicePi / triangleAmount)),
+            h+ (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+}
 
 void display(void)
 {
@@ -205,6 +288,7 @@ void display(void)
     glTranslatef(position2,0.0f, 0.0f);
     cloud1();
     cloud2();
+    cloud3();
     glPopMatrix();
 
 
