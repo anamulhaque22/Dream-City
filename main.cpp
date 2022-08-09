@@ -10,16 +10,6 @@
 #include <iostream>
 using namespace std;
 //#include<MMSystem.h>
-GLfloat position1 = .50f;
-GLfloat speed1 = -0.004f;
-void boat(int value)
-{
-    if (position1 < -0.25)
-        position1 = 0.60f;
-    position1 += speed1;
-    glutPostRedisplay();
-    glutTimerFunc(100, boat, 0);
-}
 
 GLfloat positionvcara = 0.00f;
 GLfloat speedvcara = 0.003f;
@@ -128,143 +118,7 @@ void vcar4yy(int value)
     glutTimerFunc(100, vcar4yy, 0);
 }
 
-GLfloat position2 = 0.0f;
-GLfloat speed2 = -0.002f;
-void cloud(int value)
-{
-    if (position2 < -1.00)
-        position2 = 1.00f;
-    position2 += speed2;
-    glutPostRedisplay();
-    glutTimerFunc(100, cloud, 0);
-}
 
-GLfloat position22 = 0.0f;
-GLfloat speed22 = 0.009f;
-void birdd(int value)
-{
-    if (position22 > 1.0)
-        position22 = -1.10f;
-    position22 += speed22;
-    glutPostRedisplay();
-    glutTimerFunc(100, birdd, 0);
-}
-
-GLfloat position22a = 0.60f;
-GLfloat speed22a = 0.009f;
-void birdd3(int value)
-{
-    if (position22a > 1.30)
-        position22a = -.80f;
-    position22a += speed22a;
-    glutPostRedisplay();
-    glutTimerFunc(100, birdd3, 0);
-}
-
-GLfloat position22b = 0.35f;
-GLfloat speed22b = 0.009f;
-void birdd4(int value)
-{
-    if (position22b > 1.10)
-        position22b = -1.00f;
-    position22b += speed22b;
-    glutPostRedisplay();
-    glutTimerFunc(100, birdd4, 0);
-}
-
-GLfloat position3 = 1.4f;
-GLfloat speed3 = -0.020f;
-void bullettrain(int value)
-{
-    if (position3 < -1.0)
-        position3 = 2.4f;
-    position3 += speed3;
-    glutPostRedisplay();
-    glutTimerFunc(100, bullettrain, 0);
-}
-
-GLfloat position6 = 0.60f;
-GLfloat speed6 = 0.010f;
-void car3(int value)
-{
-    if (position6 > 1.2)
-        position6 = -1.2f;
-    position6 += speed6;
-    glutPostRedisplay();
-    glutTimerFunc(100, car3, 0);
-}
-
-GLfloat position4 = -0.90f;
-GLfloat speed4 = 0.010f;
-void car1(int value)
-{
-    if (position4 > 1.2)
-        position4 = -1.2f;
-    position4 += speed4;
-    glutPostRedisplay();
-    glutTimerFunc(100, car1, 0);
-}
-
-GLfloat position5 = -1.5f;
-GLfloat speed5 = 0.009f;
-void car2(int value)
-{
-    if (position5 > 1.0)
-        position5 = -1.5f;
-    position5 += speed5;
-    glutPostRedisplay();
-    glutTimerFunc(100, car2, 0);
-}
-
-GLfloat position7 = .30f; // minibus
-GLfloat speed7 = -0.009f;
-
-void minibus(int value)
-{
-    if (position7 < -1.8)
-        position7 = 1.00f;
-
-    position7 += speed7;
-
-    glutPostRedisplay();
-
-    glutTimerFunc(100, minibus, 0);
-}
-
-GLfloat position8 = .00f; // minibus2
-GLfloat speed8 = -0.009f;
-void minibus2(int value)
-{
-    if (position8 < -1.8)
-        position8 = 1.00f;
-
-    position8 += speed8;
-
-    glutPostRedisplay();
-    glutTimerFunc(100, minibus2, 0);
-}
-
-GLfloat position9 = -0.70f;
-GLfloat speed9 = -0.010f;
-void jeep1(int value)
-{
-    if (position9 < -1.8)
-        position9 = 1.10f;
-    position9 += speed9;
-    glutPostRedisplay();
-    glutTimerFunc(100, jeep1, 0);
-}
-
-GLfloat position10 = 0.0f;
-GLfloat speed10 = -0.010f;
-void jeep2(int value)
-{
-    if (position10 < -1.80)
-        position10 = 1.10f;
-    position10 += speed10;
-    glutPostRedisplay();
-    glutTimerFunc(100, jeep2, 0);
-}
 
 void river()
 {
@@ -370,26 +224,7 @@ void roadBlock()
     glVertex2f(-0.62f, -1.00f);
     glEnd(); */
 }
-void otherCircle(GLfloat x, GLfloat y, GLfloat z, GLfloat radius, int r, int g, int b)
-{
-    int i;
-    int triangleAmount = 20; //# of triangles used to draw circle
 
-    // GLfloat radius = 0.8f; //radius
-    GLfloat twicePi = 2.0f * 3.1416;
-    int counter = 0;
-    glColor3ub(r, g, b);
-    glBegin(GL_TRIANGLE_FAN);
-    glVertex3f(x, y, z); // center of circle
-    for (i = 0; i <= triangleAmount; i++)
-    {
-        counter += 1;
-        glVertex3f(
-            x + (radius * cos(i * twicePi / triangleAmount)),
-            y + (radius * sin(i * twicePi / triangleAmount)), z);
-    }
-    glEnd();
-}
 
 void lampPost()
 {
@@ -2451,8 +2286,6 @@ int main(int argc, char **argv)
     glutCreateWindow("Dream City");
     windowModel();
     glutDisplayFunc(display);
-
-    glutTimerFunc(100, boat, 0);
 
     glutTimerFunc(100, vcar, 0);
     glutTimerFunc(100, vcar1, 0);
