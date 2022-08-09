@@ -1,9 +1,14 @@
 #include <cstdio>
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
 //#include <windows.h>
 #include <math.h>
 #define PI 3.14259265358979323846
 #include <GL/gl.h>
 #include <GL/glut.h>
+#include <iostream>
+using namespace std;
 //#include<MMSystem.h>
 GLfloat position1 = .50f;
 GLfloat speed1 = -0.004f;
@@ -28,10 +33,9 @@ void vcar1(int value)
     glutTimerFunc(100, vcar1, 0);
 }
 
-
-//vcar valosity
 GLfloat positionvcar = 0.00f;
 GLfloat speedvcar = 0.006f;
+
 void vcar(int value)
 {
     positionvcar += speedvcar;
@@ -41,10 +45,9 @@ void vcar(int value)
     glutTimerFunc(100, vcar, 0);
 }
 
-
-//vcar2 valosity
 GLfloat scaling1 = 1.00f;
 GLfloat speeds = -0.008f;
+
 void vcar2(int value)
 {
     if (positionvcar > 0.65)
@@ -339,35 +342,118 @@ void roadBlock()
     glColor3ub(88, 92, 90);
     glVertex2f(0.12f, 0.20f);
     glVertex2f(0.02f, 0.23f);
-    glVertex2f(-0.74f, -0.80f);
-    glVertex2f(-0.49f, -0.81f);
+    glVertex2f(-0.88f, -1.00f);
+    glVertex2f(-0.61f, -1.00f);
     glEnd();
 
-    glBegin(GL_POLYGON); // road back 2
-    glColor3ub(88, 92, 90);
-    glVertex2f(-0.74f, -0.80f);
-    glVertex2f(-0.49f, -0.81f);
-    glVertex2f(-0.40f, -1.00f);
-    glVertex2f(-0.72f, -1.00f);
-    glEnd();
+    // glBegin(GL_POLYGON); // road back 2
+    // glColor3ub(88, 92, 90);
+    // glVertex2f(-0.74f, -0.80f);
+    // glVertex2f(-0.49f, -0.81f);
+    // glVertex2f(-0.40f, -1.00f);
+    // glVertex2f(-0.72f, -1.00f);
+    // glEnd();
 
     glBegin(GL_POLYGON); // road back 1 inside
     glColor3ub(129, 130, 134);
     glVertex2f(0.07f, 0.19f);
     glVertex2f(0.03f, 0.19f);
-    glVertex2f(-0.66f, -0.80f);
-    glVertex2f(-0.57f, -0.81f);
+    glVertex2f(-0.80f, -1.00f);
+    glVertex2f(-0.71f, -1.00f);
     glEnd();
 
-    glBegin(GL_POLYGON); // road back 2 inside
+    /* glBegin(GL_POLYGON); // road back 2 inside
     glColor3ub(129, 130, 134);
     glVertex2f(-0.66f, -0.80f);
     glVertex2f(-0.57f, -0.81f);
     glVertex2f(-0.50f, -1.00f);
     glVertex2f(-0.62f, -1.00f);
+    glEnd(); */
+}
+void otherCircle(GLfloat x, GLfloat y, GLfloat z, GLfloat radius, int r, int g, int b)
+{
+    int i;
+    int triangleAmount = 20; //# of triangles used to draw circle
+
+    // GLfloat radius = 0.8f; //radius
+    GLfloat twicePi = 2.0f * 3.1416;
+    int counter = 0;
+    glColor3ub(r, g, b);
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex3f(x, y, z); // center of circle
+    for (i = 0; i <= triangleAmount; i++)
+    {
+        counter += 1;
+        glVertex3f(
+            x + (radius * cos(i * twicePi / triangleAmount)),
+            y + (radius * sin(i * twicePi / triangleAmount)), z);
+    }
     glEnd();
 }
 
+void lampPost()
+{
+
+    glBegin(GL_POLYGON); // jhaugass
+    glColor3ub(192, 192, 192);
+    glVertex2f(-0.91f, -0.70f); // top left
+    glVertex2f(-0.89f, -0.74f); // top right
+    glVertex2f(-0.89f, -0.97f); // botton right
+    glVertex2f(-0.91f, -0.97f); // botton left
+
+    glEnd();
+
+    glBegin(GL_POLYGON); // jhaugass
+    glColor3ub(192, 192, 192);
+    glVertex2f(-0.91f, -0.70f);
+    glVertex2f(-0.89f, -0.74f);
+    glVertex2f(-0.78f, -0.68f);
+    glVertex2f(-0.78f, -0.64f);
+
+    glEnd();
+
+    glBegin(GL_POLYGON); // jhaugass
+    glColor3ub(192, 192, 192);
+    glVertex2f(-0.80f, -0.69f);
+    glVertex2f(-0.83f, -0.74f);
+    glVertex2f(-0.77f, -0.74f);
+
+    glEnd();
+}
+void displayLampPost()
+{
+
+
+    glPushMatrix();
+    glTranslatef(-0.22f, -0.19f, 0.00f);
+    glScalef(0.75f, 0.83f, 0.00f);
+    lampPost();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.12f, 0.26f, 0.00f);
+    glScalef(0.69f, 0.76f, 0.00f);
+    lampPost();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.18f, 0.33f, 0.00f);
+    glScalef(0.54f, 0.54f, 0.00f);
+    lampPost();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.24f, 0.43f, 0.00f);
+    glScalef(0.45f, 0.45f, 0.00f);
+    lampPost();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.28f, 0.505f, 0.00f);
+    glScalef(0.36f, 0.36f, 0.00f);
+    lampPost();
+    glPopMatrix();
+}
 void university()
 
 {
@@ -2235,7 +2321,7 @@ void display(void)
 
     glPushMatrix();
     glTranslatef(-0.07f, 0.05f, 0.00f);
-    glScalef(.90, 0.90, 0.00f);
+    glScalef(1.00f, 1.00f, 0.00f);
     vcar2();
     glPopMatrix();
 
@@ -2255,12 +2341,6 @@ void display(void)
         scalef1 = 1.00;
         scalef2 = 1.00;
     }
-
-    glPushMatrix();
-    glTranslatef(-0.07f, 0.05f, 0.00f);
-    glScalef(.90, 0.90, 0.00f);
-    vcar2();
-    glPopMatrix();
 
     // buildings method
     glPushMatrix();
@@ -2347,6 +2427,8 @@ void display(void)
     jhaugass1();
     glPopMatrix();
 
+    displayLampPost();
+
     glFlush();
 }
 
@@ -2370,18 +2452,7 @@ int main(int argc, char **argv)
     glutDisplayFunc(display);
 
     glutTimerFunc(100, boat, 0);
-    glutTimerFunc(100, cloud, 0);
-    glutTimerFunc(100, birdd, 0);
-    glutTimerFunc(100, birdd3, 0);
-    glutTimerFunc(100, birdd4, 0);
-    glutTimerFunc(100, bullettrain, 0);
-    glutTimerFunc(100, car3, 0);
-    glutTimerFunc(100, car1, 0);
-    glutTimerFunc(100, car2, 0);
-    glutTimerFunc(100, jeep1, 0);
-    glutTimerFunc(100, jeep2, 0);
-    glutTimerFunc(100, minibus, 0);
-    glutTimerFunc(100, minibus2, 0);
+
     glutTimerFunc(100, vcar, 0);
     glutTimerFunc(100, vcar1, 0);
     glutTimerFunc(100, vcar2, 0);
