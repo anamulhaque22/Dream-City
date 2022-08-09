@@ -6,170 +6,269 @@
 #include <GL/glut.h>
 #include<MMSystem.h>
 
-float translate_x = 0.0;
-float translate_y = 0.0;
-float translate_z = 0.0;
-static GLfloat spin = 0.0;
-float spin_x=1.0;
-float spin_y=0.0;
-float spin_z=0.0;
-int day=1;
-bool rain=false;
-bool carv=false;
-bool planev=false;
-bool top=false;
-int flag=0;
-bool help=false;
 
-void plane()
+
+GLfloat position2 = 0.0f;
+GLfloat speed2 = -0.002f;
+void cloud(int value)
 {
-    static float a=-300.0f;
-    static float b=0.0f;
-    if(a>=1324)
-    {
-         a=-300.0f;
-         b=0.0f;
-
-    }
-    else
-    {
-        a+=0.1f;
-        b+=0.005f;
-        //glColor3ub(r,g,b);
-    }
-    //Body
-    glColor3ub(66, 66, 66);
-    glPushMatrix();
-    glTranslatef(a,b,0);
-    glBegin(GL_QUADS);
-    glVertex3i(30,700,0);
-    glVertex3i(100,700,0);
-    glVertex3i(100,715,0);
-    glVertex3i(35,715,0);
-    glEnd();
-
-    //front
-    glBegin(GL_TRIANGLES);
-    glVertex3i(100,700,0);
-    glVertex3i(110,707,0);
-    glVertex3i(100,715,0);
-    glEnd();
-
-    //fanback
-    glBegin(GL_QUADS);
-    glVertex3i(37,715,0);
-    glVertex3i(57,715,0);
-    glVertex3i(40,730,0);
-    glVertex3i(20,730,0);
-    glEnd();
-
-    //fanFrontUp
-    glBegin(GL_QUADS);
-    glVertex3i(70,715,0);
-    glVertex3i(80,715,0);
-    glVertex3i(60,735,0);
-    glVertex3i(50,735,0);
-    glEnd();
-
-    //FanFrontDown
-    glBegin(GL_QUADS);
-    glVertex3i(70,700,0);
-    glVertex3i(80,700,0);
-    glVertex3i(60,680,0);
-    glVertex3i(50,680,0);
-    glEnd();
-
-    //window
-    glColor3ub(255,255,255);
-    glBegin(GL_POINTS);
-    glVertex3i(95,710,0);
-    glVertex3i(90,710,0);
-    glVertex3i(85,710,0);
-    glVertex3i(80,710,0);
-    glVertex3i(75,710,0);
-    glVertex3i(70,710,0);
-    glVertex3i(65,710,0);
-    glVertex3i(60,710,0);
-    glVertex3i(55,710,0);
-    glEnd();
-    glPopMatrix();
+    if(position2 < -1.00)
+        position2 =1.00f;
+    position2 += speed2;
     glutPostRedisplay();
+    glutTimerFunc(100, cloud, 0);
+}
+
+void cloud1()
+{
+    int i;
+
+    GLfloat x=.5f;
+    GLfloat y=.86f;
+    GLfloat radius =.05f;
+    int triangleAmount = 20;
+    GLfloat twicePi = 2.0f * PI;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(x, y); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            x + (radius * cos(i *  twicePi / triangleAmount)),
+            y + (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat a=.55f;
+    GLfloat b=.83f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(a, b); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            a + (radius * cos(i *  twicePi / triangleAmount)),
+            b + (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat c=.45f;
+    GLfloat d=.83f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(c, d); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            c + (radius * cos(i *  twicePi / triangleAmount)),
+            d + (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat e=.52f;
+    GLfloat f=.8f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(e, f); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            e + (radius * cos(i *  twicePi / triangleAmount)),
+            f+ (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat g=.6f;
+    GLfloat h=.82f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(g, h); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            g + (radius * cos(i *  twicePi / triangleAmount)),
+            h+ (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
 
 }
 
-void planeTwo()
+void cloud2()
 {
-     static float a=550.0f;
-     static float b=0.0f;
-    if(a<=-1300)
+
+    int i;
+
+    GLfloat x=-.5f;
+    GLfloat y=.86f;
+    GLfloat radius =.05f;
+    int triangleAmount = 20;
+    GLfloat twicePi = 2.0f * PI;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(x, y); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
     {
-         a=550.0f;
-         b=0.0f;
-
-    }
-    else
-    {
-        a-=0.2f;
-        b-=0.02f;
-        //glColor3ub(r,g,b);
-    }
-
-
-    //Body
-    glColor3ub(128, 128, 128);
-    glPushMatrix();
-    glTranslatef(a,b,0);
-    glBegin(GL_QUADS);
-    glVertex3i(919,650,0);
-    glVertex3i(989,650,0);
-    glVertex3i(989,665,0);
-    glVertex3i(919,665,0);
-    glEnd();
-
-    //Front
-    glBegin(GL_TRIANGLES);
-    glVertex3i(919,650,0);
-    glVertex3i(909,657,0);
-    glVertex3i(919,665,0);
-    glEnd();
-
-    //FanBack
-    glBegin(GL_QUADS);
-    glVertex3i(987,665,0);
-    glVertex3i(1010,680,0);
-    glVertex3i(990,680,0);
-    glVertex3i(967,665,0);
-    glEnd();
-
-    //FanFrontUp
-    glBegin(GL_QUADS);
-    glVertex3i(949,665,0);
-    glVertex3i(959,665,0);
-    glVertex3i(979,685,0);
-    glVertex3i(969,685,0);
-    glEnd();
-
-    //FanFrontDown
-    glBegin(GL_QUADS);
-    glVertex3i(949,650,0);
-    glVertex3i(969,630,0);
-    glVertex3i(979,630,0);
-    glVertex3i(959,650,0);
-    glEnd();
-
-    int x=924;
-    //Window
-    glColor3ub(255,255,255);
-    glBegin(GL_POINTS);
-    for(int i=9;i>=0;i--)
-    {
-        glVertex3i(x,660,0);
-        x+=5;
+        glVertex2f(
+            x + (radius * cos(i *  twicePi / triangleAmount)),
+            y + (radius * sin(i * twicePi / triangleAmount))
+        );
     }
     glEnd();
-    glPopMatrix();
-    glutPostRedisplay();
 
+    GLfloat a=-.55f;
+    GLfloat b=.83f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(a, b); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            a + (radius * cos(i *  twicePi / triangleAmount)),
+            b + (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat c=-.45f;
+    GLfloat d=.83f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(c, d); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            c + (radius * cos(i *  twicePi / triangleAmount)),
+            d + (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat e=-.52f;
+    GLfloat f=.8f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(e, f); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            e + (radius * cos(i *  twicePi / triangleAmount)),
+            f+ (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat g=-.6f;
+    GLfloat h=.82f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(g, h); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            g + (radius * cos(i *  twicePi / triangleAmount)),
+            h+ (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+}
+void cloud3()
+{
+
+    int i;
+
+    GLfloat x=0.0f;
+    GLfloat y=.86f;
+    GLfloat radius =.05f;
+    int triangleAmount = 20;
+    GLfloat twicePi = 2.0f * PI;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(x, y); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            x + (radius * cos(i *  twicePi / triangleAmount)),
+            y + (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat a=.05f;
+    GLfloat b=.83f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(a, b); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            a + (radius * cos(i *  twicePi / triangleAmount)),
+            b + (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat c=-0.05f;
+    GLfloat d=.83f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(c, d); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            c + (radius * cos(i *  twicePi / triangleAmount)),
+            d + (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat e=.02f;
+    GLfloat f=.8f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(e, f); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            e + (radius * cos(i *  twicePi / triangleAmount)),
+            f+ (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
+
+    GLfloat g=.1f;
+    GLfloat h=.82f;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(255, 217, 255);
+    glVertex2f(g, h); // center of circle
+    for(i = 0; i <= triangleAmount; i++)
+    {
+        glVertex2f(
+            g + (radius * cos(i *  twicePi / triangleAmount)),
+            h+ (radius * sin(i * twicePi / triangleAmount))
+        );
+    }
+    glEnd();
 }
 
 
@@ -397,60 +496,56 @@ void jhaugass1()
 
 }
 
-void keyboard(unsigned char key, int x, int y)
-{
-//-------- spin --------
 
-if(key=='p')
+GLfloat position1=.50f;
+GLfloat speed1=-.004f;
+void boat(int value)
 {
-    planev=true;
-}
-
-else if(key==27)
-{
-    exit(0);
-}
+    if(position1 < -0.25)
+        position1 = 0.60f;
+    position1 += speed1;
+    glutPostRedisplay();
+    glutTimerFunc(100, boat, 0);
 }
 
 
-void SpecialKeys(int key, int x, int y)
+void boat()
 {
-    switch (key)
-	{
-		case GLUT_KEY_LEFT:
-            if(translate_x<200)
-            {
-                translate_x+=5;
-                glutPostRedisplay();
-            }
-			break;
+    glBegin(GL_POLYGON);
+    glColor3ub(0,0,0);
+    glVertex2f(0.50f, -0.95f);
+    glVertex2f(0.65f, -0.95f);
+    glVertex2f(0.70f, -0.90);
+    glVertex2f(0.45f, -0.90f);
+    glEnd();
 
-		case GLUT_KEY_RIGHT:
-            if(translate_x>-300)
-            {
-                translate_x-=5;
-                glutPostRedisplay();
-            }
-			break;
+    glBegin(GL_POLYGON);
+    glColor3ub(255, 153, 0);
+    glVertex2f(0.50f, -0.90f);
+    glVertex2f(0.65f,-0.90f);
+    glVertex2f(0.63f, -0.87f);
+    glVertex2f(0.60f, -0.85f);
+    glVertex2f(0.55f, -0.85f);
+    glVertex2f(0.52f, -0.87f);
+    glEnd();
 
-        case GLUT_KEY_UP:
-            spin-=5;
-            if(spin>=360)
-            {
-                spin=0;
-            }
-            glutPostRedisplay();
-			break;
+    glBegin(GL_POLYGON);
+    glColor3ub(255,25,25);
+    glVertex2f(0.52f, -0.82f);
+    glVertex2f(0.63f, -0.83f);
+    glVertex2f(0.63f, -0.68f);
+    glVertex2f(0.52f, -0.67f);
 
-        case GLUT_KEY_DOWN:
-            spin+=5;
-            if(spin<=360)
-            {
-                spin=0;
-            }
-            glutPostRedisplay();
-			break;
-	}
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3ub(136,204,0);
+    glVertex2f(0.57f, -0.85f);
+    glVertex2f(0.58f, -0.85f);
+    glVertex2f(0.58f, -0.65f);
+    glVertex2f(0.57f, -0.65f);
+    glEnd();
+
 }
 
 
@@ -478,6 +573,15 @@ void display(void)
 	roadBlock();
     tunnel();
     river();
+
+    glPushMatrix(); //cloud
+    glTranslatef(position2,0.0f, 0.0f);
+    cloud1();
+    cloud2();
+    cloud3();
+
+    glPopMatrix();
+
 
     // Jhaugass 1
     glPushMatrix();
@@ -521,16 +625,14 @@ void display(void)
     glTranslatef(1.06f, 0.28f, 0.00f);
     glScalef(0.53f, 0.53f, 0.00f);
     jhaugass1();
-    if(planev)
-    {
-        plane();
-        planeTwo();
-    }
+
     glPopMatrix();
+
+
+
+
 	glFlush();
 }
-
-
 
 void windowModel(void)
 {
@@ -549,9 +651,11 @@ int main(int argc, char **argv)
 	glutInitWindowPosition(100, 100);
 	glutCreateWindow("Dream City");
 	windowModel();
+
 	glutDisplayFunc(display);
-    glutKeyboardFunc(keyboard);
-    glutSpecialFunc(SpecialKeys);
+    glutTimerFunc(100, cloud, 0);
+
+
 
 	glutMainLoop();
 	return 0;
