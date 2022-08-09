@@ -420,6 +420,7 @@ void lampPost()
 
     glEnd();
 }
+//display lamp road side
 void displayLampPost()
 {
 
