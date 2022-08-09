@@ -7,7 +7,6 @@
 #include<MMSystem.h>
 
 
-
 GLfloat position2 = 0.0f;
 GLfloat speed2 = -0.002f;
 void cloud(int value)
@@ -559,70 +558,85 @@ void greenBackground()
 // road block
 void roadBlock()
 {
-	glBegin(GL_POLYGON); // road back 1
-	glColor3ub(168, 169, 173);
-	glVertex2f(-0.13f, 0.40f);
-	glVertex2f(-0.13f, 0.38f);
-	glVertex2f(-0.32f, 0.31f);
-	glVertex2f(-0.35f, 0.33f);
+	    glBegin(GL_POLYGON); // road back
+    glColor3ub(88, 92, 90);
+    glVertex2f(0.12f, 0.20f);
+    glVertex2f(0.02f, 0.23f);
+    glVertex2f(-0.88f, -1.00f);
+    glVertex2f(-0.61f, -1.00f);
+    glEnd();
 
-	glEnd();
+    glBegin(GL_POLYGON); // road back inside
+    glColor3ub(129, 130, 134);
+    glVertex2f(0.07f, 0.19f);
+    glVertex2f(0.03f, 0.19f);
+    glVertex2f(-0.80f, -1.00f);
+    glVertex2f(-0.71f, -1.00f);
+    glEnd();
+}
+void lampPost()
+{
 
-	glBegin(GL_POLYGON); // road back 2
-	glColor3ub(168, 169, 173);
-	glVertex2f(-0.32f, 0.31f);
-	glVertex2f(-0.29f, 0.33f);
-	glVertex2f(0.12f, 0.20f);
-	glVertex2f(0.00f, 0.16f);
-	glEnd();
+    glBegin(GL_POLYGON); // jhaugass
+    glColor3ub(192, 192, 192);
+    glVertex2f(-0.91f, -0.70f); // top left
+    glVertex2f(-0.89f, -0.74f); // top right
+    glVertex2f(-0.89f, -0.97f); // botton right
+    glVertex2f(-0.91f, -0.97f); // botton left
 
-	glBegin(GL_POLYGON); // road back 3
-	glColor3ub(168, 169, 173);
-	glVertex2f(0.12f, 0.20f);
-	glVertex2f(0.00f, 0.20f);
-	glVertex2f(-0.74f, -0.80f);
-	glVertex2f(-0.49f, -0.81f);
-	glEnd();
+    glEnd();
 
-	glBegin(GL_POLYGON); // road back 4
-	glColor3ub(168, 169, 173);
-	glVertex2f(-0.74f, -0.80f);
-	glVertex2f(-0.49f, -0.81f);
-	glVertex2f(-0.40f, -1.00f);
-	glVertex2f(-0.72f, -1.00f);
-	glEnd();
+    glBegin(GL_POLYGON); // jhaugass
+    glColor3ub(192, 192, 192);
+    glVertex2f(-0.91f, -0.70f);
+    glVertex2f(-0.89f, -0.74f);
+    glVertex2f(-0.78f, -0.68f);
+    glVertex2f(-0.78f, -0.64f);
 
-	glLineWidth(2);
-	glBegin(GL_LINES); // road back 1 inside
-	glColor3ub(129, 130, 134);
-	glVertex2f(-0.13f, 0.39f);
-	glVertex2f(-0.313f, 0.32f);
+    glEnd();
 
-	glEnd();
+    glBegin(GL_POLYGON); // jhaugass
+    glColor3ub(192, 192, 192);
+    glVertex2f(-0.80f, -0.69f);
+    glVertex2f(-0.83f, -0.74f);
+    glVertex2f(-0.77f, -0.74f);
 
-	glBegin(GL_POLYGON); // road back 2 inside
-	glColor3ub(129, 130, 134);
-	glVertex2f(0.08f, 0.19f);
-	glVertex2f(0.05f, 0.16f);
-	glVertex2f(-0.31f, 0.32f);
-	glVertex2f(-0.31f, 0.33f);
-	glEnd();
+    glEnd();
+}
+//display lamp road side
+void displayLampPost()
+{
 
-	glBegin(GL_POLYGON); // road back 3 inside
-	glColor3ub(129, 130, 134);
-	glVertex2f(0.07f, 0.19f);
-	glVertex2f(0.03f, 0.19f);
-	glVertex2f(-0.66f, -0.80f);
-	glVertex2f(-0.57f, -0.81f);
-	glEnd();
 
-	glBegin(GL_POLYGON); // road back 4 inside
-	glColor3ub(129, 130, 134);
-	glVertex2f(-0.66f, -0.80f);
-	glVertex2f(-0.57f, -0.81f);
-	glVertex2f(-0.50f, -1.00f);
-	glVertex2f(-0.62f, -1.00f);
-	glEnd();
+    glPushMatrix();
+    glTranslatef(-0.22f, -0.19f, 0.00f);
+    glScalef(0.75f, 0.83f, 0.00f);
+    lampPost();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.12f, 0.26f, 0.00f);
+    glScalef(0.69f, 0.76f, 0.00f);
+    lampPost();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.18f, 0.33f, 0.00f);
+    glScalef(0.54f, 0.54f, 0.00f);
+    lampPost();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.24f, 0.43f, 0.00f);
+    glScalef(0.45f, 0.45f, 0.00f);
+    lampPost();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.28f, 0.505f, 0.00f);
+    glScalef(0.36f, 0.36f, 0.00f);
+    lampPost();
+    glPopMatrix();
 }
 
 void tunnel()
@@ -734,8 +748,9 @@ void jhaugass1()
 }
 
 
-GLfloat position1=.50f;
-GLfloat speed1=-.004f;
+
+GLfloat position1 = .50f;
+GLfloat speed1 =-0.004f;
 void boat(int value)
 {
     if(position1 < -0.25)
@@ -748,7 +763,8 @@ void boat(int value)
 
 void boat()
 {
-    glBegin(GL_POLYGON);
+
+ glBegin(GL_POLYGON);
     glColor3ub(0,0,0);
     glVertex2f(0.50f, -0.95f);
     glVertex2f(0.65f, -0.95f);
@@ -783,7 +799,10 @@ void boat()
     glVertex2f(0.57f, -0.65f);
     glEnd();
 
+
+
 }
+
 
 
 
@@ -880,11 +899,14 @@ void display(void)
     glTranslatef(1.06f, 0.28f, 0.00f);
     glScalef(0.53f, 0.53f, 0.00f);
     jhaugass1();
-
     glPopMatrix();
 
+    glPushMatrix();
+    glTranslatef(position1,0.0f, 0.0f);
+    boat();
+    glPopMatrix();
 
-
+    displayLampPost();
 
 	glFlush();
 }
@@ -912,6 +934,7 @@ int main(int argc, char **argv)
     glutTimerFunc(100,birdd,0);
     glutTimerFunc(100,birdd3,0);
     glutTimerFunc(100,birdd4,0);
+    glutTimerFunc(100, boat, 0);
 
 
 
